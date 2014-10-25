@@ -1,10 +1,11 @@
-﻿// =SB2Revival Engine Upgrade=
-// =C#/XNA convertion from Rpg Maker=
+﻿// =Realms Engine=
+// =Realms Of the Mind=
 // =Programmers=
 // =Mute Lovestone=
 // =WorldStats.cs=
 // = 10/25/2014 =
 // =ROTM_MU001=
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

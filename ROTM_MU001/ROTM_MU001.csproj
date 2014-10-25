@@ -80,6 +80,7 @@
     <Compile Include="Base\WorldStats.cs" />
     <Compile Include="Characters\Entity.cs" />
     <Compile Include="Characters\Race.cs" />
+    <Compile Include="DataManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

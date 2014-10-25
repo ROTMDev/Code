@@ -1,10 +1,11 @@
-﻿// =SB2Revival Engine Upgrade=
-// =C#/XNA convertion from Rpg Maker=
+﻿// =Realms Engine=
+// =Realms Of the Mind=
 // =Programmers=
 // =Mute Lovestone=
 // =Tags.cs=
 // = 10/25/2014 =
 // =ROTM_MU001=
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,51 +16,35 @@ namespace LibRealm.Base
     public class Tags
     {
         #region values
+        
         protected string name;
         protected int id;
         protected string scriptName;
         protected bool hasScript;
         #endregion
         #region gets/sets
+        
         public bool HasScript
         {
-            get
-            {
-                return this.hasScript;
-            }
+            get { return this.hasScript; }
         }
+        
         public string ScriptName
         {
-            get
-            {
-                return this.scriptName;
-            }
-            protected set
-            {
-                this.scriptName = value;
-            }
+            get { return this.scriptName; }
+            protected set { this.scriptName = value; }
         }
+        
         public int Id
         {
-            get
-            {
-                return this.id;
-            }
-            protected set
-            {
-                this.id = value;
-            }
+            get { return this.id; }
+            protected set { this.id = value; }
         }
+        
         public string Name
         {
-            get
-            {
-                return this.name;
-            }
-            protected set
-            {
-                this.name = value;
-            }
+            get { return this.name; }
+            protected set { this.name = value; }
         }
         #endregion
     }

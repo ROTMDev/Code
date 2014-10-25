@@ -1,10 +1,11 @@
-﻿// =SB2Revival Engine Upgrade=
-// =C#/XNA convertion from Rpg Maker=
+﻿// =Realms Engine=
+// =Realms Of the Mind=
 // =Programmers=
 // =Mute Lovestone=
 // =CastleStats.cs=
 // = 10/25/2014 =
 // =ROTM_MU001=
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace LibRealm.Base
     public sealed class CastleStats
     {
         #region values
+        
         private Int32 leadership;
         private Int32 command;
         private Int32 meconized;
