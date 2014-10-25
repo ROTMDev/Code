@@ -1,17 +1,27 @@
-﻿using System;
+﻿// =Realms Engine=
+// =Realms Of the Mind=
+// =Programmers=
+// =Mute Lovestone=
+// =Stats.cs=
+// = 10/25/2014 =
+// =ROTM_MU001=
+
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
-
 namespace LibRealm.Base
 {
     public sealed class Stats
     {
         #region classes
-        public Stats() { }
+        
+        public Stats()
+        { }
         #endregion
         #region Values
+        
         private Int32 strength;
         private Int32 intelligence;
         private Int32 dextarity;
@@ -22,301 +32,86 @@ namespace LibRealm.Base
         private Int32 perception;
         #endregion
         #region gets/sets
+        
         public int Perception
         {
-            get
-            {
-                return this.perception;
-            }
-            set
-            {
-                this.perception = value;
-            }
+            get { return this.perception; }
+            set { this.perception = value; }
         }
+        
         public int Knoledge
         {
-            get
-            {
-                return this.knoledge;
-            }
-            set
-            {
-                this.knoledge = value;
-            }
+            get { return this.knoledge; }
+            set { this.knoledge = value; }
         }
+        
         public int Endure
         {
-            get
-            {
-                return this.endure;
-            }
-            set
-            {
-                this.endure = value;
-            }
+            get { return this.endure; }
+            set { this.endure = value; }
         }
+        
         public int Agility
         {
-            get
-            {
-                return this.agility;
-            }
-            set
-            {
-                this.agility = value;
-            }
+            get { return this.agility; }
+            set { this.agility = value; }
         }
+        
         public int Wisdom
         {
-            get
-            {
-                return this.wisdom;
-            }
-            set
-            {
-                this.wisdom = value;
-            }
+            get { return this.wisdom; }
+            set { this.wisdom = value; }
         }
+        
         public int Dextarity
         {
-            get
-            {
-                return this.dextarity;
-            }
-            set
-            {
-                this.dextarity = value;
-            }
+            get { return this.dextarity; }
+            set { this.dextarity = value; }
         }
+        
         public int Intelligence
         {
-            get
-            {
-                return this.intelligence;
-            }
-            set
-            {
-                this.intelligence = value;
-            }
+            get { return this.intelligence; }
+            set { this.intelligence = value; }
         }
+        
         public int Strength
         {
-            get
-            {
-                return this.strength;
-            }
-            set
-            {
-                this.strength = value;
-            }
-        }
-        #endregion
-        #region Logic
-
-        #endregion
-        #region Read/Write
-       
-        public void read(BinaryReader Reader)
-        {
-        }
-        public void Write(BinaryWriter writer)
-        {
-
-        }
-        #endregion
-    }
-    public sealed class DerStats
-    {
-        #region values
-        #region derived stats 1
-        private AttributePair health;
-        private AttributePair magic;
-        private AttributePair sp;
-        private Int32 phyAttack;
-        private Int32 phyDefence;
-        private Int32 magDefence;
-        private Int32 magAttack;
-        #endregion
-        #region dex stats
-        private Int32 hitChance;
-        private Int32 speed;
-        private Int32 dodge;
-        private Int32 counter;
-        #endregion
-        #endregion
-        #region gets/sets
-        public int PhyDefence
-        {
-            get
-            {
-                return this.phyDefence;
-            }
-            set
-            {
-                this.phyDefence = value;
-            }
-        }
-        public int PhyAttack
-        {
-            get
-            {
-                return this.phyAttack;
-            }
-            set
-            {
-                this.phyAttack = value;
-            }
-        }
-        public AttributePair Sp
-        {
-            get
-            {
-                return this.sp;
-            }
-            set
-            {
-                this.sp = value;
-            }
-        }
-        public AttributePair Magic
-        {
-            get
-            {
-                return this.magic;
-            }
-            set
-            {
-                this.magic = value;
-            }
-        }
-        public AttributePair Health
-        {
-            get
-            {
-                return this.health;
-            }
-            set
-            {
-                this.health = value;
-            }
-        }
-        #endregion
-        #region class
-        public DerStats(Stats Main)
-        {
-            #region derived stats 1
-            #region physical
-            this.phyAttack = Convert.ToInt32((Main.Strength * .88) + (Main.Dextarity * .333));
-            this.phyDefence = Convert.ToInt32((Main.Strength * .88) + (Main.Dextarity * .333));
-            #endregion
-            #region values
-            this.health = health.SetMaximum(Convert.ToInt32(Main.Endure * 20));
-            this.sp = sp.SetMaximum(Convert.ToInt32(Main.Dextarity * 20));
-            this.magic = magic.SetMaximum(Convert.ToInt32(Main.Wisdom * 20));
-            #endregion
-            #region magic
-            this.magAttack = Convert.ToInt32(Main.Intelligence * .88);
-            this.magDefence = Convert.ToInt32(Main.Intelligence * .88);
-            #endregion
-            #endregion
-            #region dex stats
-            this.hitChance = Convert.ToInt32(Main.Dextarity / 20);
-            this.speed = Convert.ToInt32(Main.Agility / 10);
-            this.dodge = Convert.ToInt32(Main.Agility + Main.Dextarity / 50);
-            this.counter = Convert.ToInt32(Main.Dextarity / 50 + (Main.Perception / 100));
-            #endregion
+            get { return this.strength; }
+            set { this.strength = value; }
         }
         #endregion
         #region Logic
         #endregion
         #region Read/Write
         
-        /// <summary>
-        /// Might be used for debugging
-        /// <para>Not used for anything yet</para>
-        /// </summary>
-        public void Read() { }
-        /// <summary>
-        /// might be used for deugging
-        /// <para>unussed</para>
-        /// </summary>
-        public void Write() { }
-        #endregion
-    }
-    public class AttributePair
-    {
-        #region Field Region
-
-        int currentValue;
-        int maximumValue;
-
-        #endregion
-
-        #region Property Region
-
-        public int CurrentValue
+        public void read(BinaryReader Reader)
         {
-            get { return currentValue; }
+            Reader.ReadBytes(2);
+            this.agility = Reader.ReadInt32();
+            this.dextarity = Reader.ReadInt32();
+            this.endure = Reader.ReadInt32();
+            this.intelligence = Reader.ReadInt32();
+            this.knoledge = Reader.ReadInt32();
+            this.perception = Reader.ReadInt32();
+            this.strength = Reader.ReadInt32();
+            this.wisdom = Reader.ReadInt32();
+            Reader.ReadBytes(2);
         }
-
-        public int MaximumValue
+        
+        public void Write(BinaryWriter writer)
         {
-            get { return maximumValue; }
+            writer.Write("\0\0");
+            writer.Write(this.agility);
+            writer.Write(this.dextarity);
+            writer.Write(this.endure);
+            writer.Write(this.intelligence);
+            writer.Write(this.knoledge);
+            writer.Write(this.perception);
+            writer.Write(this.strength);
+            writer.Write(this.wisdom);
+            writer.Write("\0\0");
         }
-
-        public static AttributePair Zero
-        {
-            get { return new AttributePair(); }
-        }
-
-        #endregion
-
-        #region Constructor Region
-
-        private AttributePair()
-        {
-            currentValue = 0;
-            maximumValue = 0;
-        }
-
-        public AttributePair(int maxValue)
-        {
-            currentValue = maxValue;
-            maximumValue = maxValue;
-        }
-
-        #endregion
-
-        #region Method Region
-
-        public void Heal(ushort value)
-        {
-            currentValue += value;
-            if (currentValue > maximumValue)
-                currentValue = maximumValue;
-        }
-
-        public void Damage(ushort value)
-        {
-            currentValue -= value;
-            if (currentValue < 0)
-                currentValue = 0;
-        }
-
-        public void SetCurrent(int value)
-        {
-            currentValue = value;
-            if (currentValue > maximumValue)
-                currentValue = maximumValue;
-        }
-
-        public void SetMaximum(int value)
-        {
-            maximumValue = value;
-            if (currentValue > maximumValue)
-                currentValue = maximumValue;
-        }
-
         #endregion
     }
 }

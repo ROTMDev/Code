@@ -1,9 +1,15 @@
-﻿using System;
+﻿// =SB2Revival Engine Upgrade=
+// =C#/XNA convertion from Rpg Maker=
+// =Programmers=
+// =Mute Lovestone=
+// =Tags.cs=
+// = 10/25/2014 =
+// =ROTM_MU001=
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using LuaInterface;
-
 namespace LibRealm.Base
 {
     public class Tags
@@ -56,6 +62,5 @@ namespace LibRealm.Base
             }
         }
         #endregion
-        
     }
 }
