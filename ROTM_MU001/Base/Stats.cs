@@ -220,6 +220,10 @@ namespace LibRealm.Base
             #endregion
             #endregion
             #region dex stats
+            this.hitChance = Convert.ToInt32(Main.Dextarity / 20);
+            this.speed = Convert.ToInt32(Main.Agility / 10);
+            this.dodge = Convert.ToInt32(Main.Agility + Main.Dextarity / 50);
+            this.counter = Convert.ToInt32(Main.Dextarity / 50 + (Main.Perception / 100));
             #endregion
         }
         #endregion
