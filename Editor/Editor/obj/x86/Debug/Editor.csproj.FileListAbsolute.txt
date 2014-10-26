@@ -12,3 +12,11 @@ C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\ROTM_MU00
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\ROTM_MU002.pdb
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\ROTM_MU001.dll
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\ROTM_MU001.pdb
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml

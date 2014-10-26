@@ -18,8 +18,10 @@ using Editor.Ra;
 using LibRealm.Characters;
 namespace Editor.EditorF
 {
+    public enum Editing { True, False }
     public partial class EditMain : Form
     {
+        public Editing edits = Editing.False;
         public Dictionary<int, Race> races = new Dictionary<int, Race>();
         #region premade(Need Edited)
         private int childFormNumber = 0;
@@ -213,6 +215,19 @@ namespace Editor.EditorF
         {
             RaceEdi nx = new RaceEdi(this, false);
             nx.ShowDialog();
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.edits == Editing.True)
+            {
+                backgroundWorker1.RunWorkerAsync();
+            }
         }
     }
 }

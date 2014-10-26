@@ -59,9 +59,13 @@ namespace Editor.Ra
             NewStats.Strength = this.numBox1.IntValue;
             NewStats.Wisdom = this.numBox4.IntValue;
             newRace = new Race(NewStats, this.textBox1.Text, this.numBox9.IntValue, this.textBox2.Text);
+
             if (this.editing)
             { this.editor.races.Remove(this.numBox9.IntValue); }
             this.editor.races.Add(this.numBox9.IntValue, newRace);
+            editor.edits = Editing.True;
+            editor.addRaces();
+            this.Close();
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         { this.Close(); }
