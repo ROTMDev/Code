@@ -14,12 +14,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Editor.Options;
 using Editor.Ra;
+using Editor.Trans;
 using LibRealm.Base;
 using LibRealm.Characters;
 using ROTM_MU002.Windows;
-using Editor.Trans;
-using Editor.Options;
 namespace Editor.EditorF
 {
     public enum Editing
@@ -27,7 +27,6 @@ namespace Editor.EditorF
         True,
         False
     }
-
     public partial class EditMain : Form
     {
         #region values
@@ -69,6 +68,7 @@ namespace Editor.EditorF
             CheckForIllegalCrossThreadCalls = false;
             ListView.CheckForIllegalCrossThreadCalls = false;
             this.backgroundWorker1.RunWorkerAsync();
+            this.setLanguage();
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -118,42 +118,42 @@ namespace Editor.EditorF
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             #region Races
-            if (this.treeView1.SelectedNode.Text == "Races")
+            if (this.treeView1.SelectedNode.Text == TransWord("Races"))
             {
                 this.listView1.Items.Clear();
                 this.listView1.Columns.Clear();
                 ColumnHeader head = new ColumnHeader();
-                head.Text = "Name";
-                this.listView1.Columns.Add(head);
-                ColumnHeader head2 = new ColumnHeader();
-                head2.Text = "ID";
-                this.listView1.Columns.Add(head2);
-                head = new ColumnHeader();
-                head.Text = "BodyFile";
+                head.Text =TransWord("Name");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text = "Stat-Str";
+                head.Text =TransWord("ID");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text = "Stat-Int";
+                head.Text =TransWord("BodyFile");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text = "Stat-Wis";
+                head.Text =TransWord("Stat-Str");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text = "stat-Dex";
+                head.Text =TransWord("Stat-Int");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text = "Stat-Agi";
+                head.Text =TransWord("Stat-Wis");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text = "Stat-Endure";
+                head.Text =TransWord("stat-Dex");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text = "Stat-Kno";
+                head.Text =TransWord("Stat-Agi");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text = "Stat-Per";
+                head.Text =TransWord("Stat-Endure");
+                this.listView1.Columns.Add(head);
+                head = new ColumnHeader();
+                head.Text =TransWord("Stat-Kno");
+                this.listView1.Columns.Add(head);
+                head = new ColumnHeader();
+                head.Text =TransWord("Stat-Per");
                 this.listView1.Columns.Add(head);
                 this.listView1.ContextMenuStrip = this.RaceMen;
                 this.addRaces();
@@ -165,13 +165,12 @@ namespace Editor.EditorF
                 this.listView1.Items.Clear();
                 this.listView1.Columns.Clear();
                 ColumnHeader head = new ColumnHeader();
-                head.Text = "Name";
+                head.Text =TransWord("Name");
                 this.listView1.Columns.Add(head);
-                head=new ColumnHeader();
-                head.Text="ID";
+                head = new ColumnHeader();
+                head.Text =TransWord("ID");
                 this.listView1.Columns.Add(head);
-                AddElems();
-
+                this.AddElems();
             }
             #endregion
         }
@@ -186,7 +185,9 @@ namespace Editor.EditorF
             nx.Show(this);
         }
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
-        { OptMenu opts = new OptMenu();opts.ShowDialog(); }
+        {
+            OptMenu opts = new OptMenu();opts.ShowDialog();
+        }
         private void EditMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.edits == Editing.True)
@@ -236,29 +237,113 @@ namespace Editor.EditorF
         }
         public void setLanguage()
         {
-            BinaryReader wr = new BinaryReader(File.Open(Environment.CurrentDirectory + @"\opt.op", FileMode.Open));
-            Laguage xp = new Laguage();
-            xp.Read(wr);
-            wr.Close();
+            try
+            {
+                BinaryReader wr = new BinaryReader(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\opt.op"), FileMode.Open));
+                Laguage xp = new Laguage();
+                xp.Read(wr);
+                wr.Close();
+                if (xp.LanguageName == "")
+                { xp.LanguageName = "English"; }
+                wr = new BinaryReader(File.Open(string.Format("{0}{1}{2}.lan", Environment.CurrentDirectory, @"\Editor\Translation\", xp.LanguageName), FileMode.Open));
+                this.trns.read(wr);
+                wr.Close();
+            }
+            catch { MessageBox.Show("Please Select your Language,go Options>Options then choose your language and save"); }
+            this.translate();
+        }
+        public void translate()
+        {
+            #region controls
+            foreach (Control x in this.Controls)
+            {
+                try
+                { x.Text = this.trns.tr(x.Text); }
+                catch
+                { x.Text = x.Text; }
+                foreach (Control x2 in x.Controls)
+                {
+                    try
+                    { x2.Text = this.trns.tr(x2.Text); }
+                    catch
+                    { x2.Text = x2.Text; }
+                    foreach (Control x3 in x2.Controls)
+                    {
+                        try
+                        { x3.Text = this.trns.tr(x3.Text); }
+                        catch
+                        { x3.Text = x3.Text; }
+                    }
+                }
+            }
+            #endregion
+            #region treenodes
+            foreach (TreeNode x in this.treeView1.Nodes)
+            {
+                try
+                { x.Text = this.trns.tr(x.Text); }
+                catch
+                { x.Text = x.Text; }
+                foreach (TreeNode x2 in x.Nodes)
+                {
+                    try
+                    { x2.Text = this.trns.tr(x2.Text); }
+                    catch
+                    { x2.Text = x2.Text; }
+                    foreach (TreeNode x3 in x2.Nodes)
+                    {
+                        try
+                        { x3.Text = this.trns.tr(x3.Text); }
+                        catch
+                        { x3.Text = x3.Text; }
+                    }
+                }
+            }
+            #endregion
+            #region menus
+            foreach (ToolStripMenuItem x in this.menuStrip.Items)
+            {
+                try
+                { x.Text = this.trns.tr(x.Text); }
+                catch
+                { x.Text = x.Text; }
+                foreach (ToolStripMenuItem x2 in x.DropDownItems)
+                {
+                    try
+                    { x2.Text = this.trns.tr(x2.Text); }
+                    catch
+                    { x2.Text = x2.Text; }
+                    foreach (ToolStripMenuItem x3 in x2.DropDownItems)
+                    {
+                        try
+                        { x3.Text = this.trns.tr(x3.Text); }
+                        catch
+                        { x3.Text = x3.Text; }
+                    }
+                }
+            }
+
+            #endregion
+        }
+        public string TransWord(string word)
+        {
+            try
+            {
+                return this.trns.tr(word);
+            }
+            catch { return word; }
         }
         #endregion
-
         #region unfinished
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        
-        }
-
+        { }
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
+        { }
         #endregion
-
         private void editTranslationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TransCreator creator = new TransCreator();
-            creator.ShowDialog(this);
+            creator.Show(this);
         }
     }
 }

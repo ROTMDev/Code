@@ -54,5 +54,10 @@ namespace Editor.Options
             wri.Close();
             this.Close();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.lan.LanguageName = comboBox1.SelectedItem.ToString();
+        }
     }
 }

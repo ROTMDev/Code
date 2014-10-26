@@ -24,6 +24,7 @@ namespace Editor.Trans
         {
             this.language = new Laguage(textBox1.Text);
             comboBox2.Items.Add(textBox1.Text);
+            this.translation = new LanTrans(textBox1.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -31,8 +32,14 @@ namespace Editor.Trans
             translation.addTrans(textBox2.Text, textBox3.Text);
             if (this.translation.name.LanguageName == "")
             {
-                translation.name.LanguageName = textBox1.Text;
+                translation.name.LanguageName = comboBox2.Items[comboBox2.SelectedIndex].ToString();
             }
+            try
+            {
+                tanslations.Remove(comboBox2.Items[comboBox2.SelectedIndex].ToString());
+            }
+            catch { }
+            tanslations.Add(comboBox2.Items[comboBox2.SelectedIndex].ToString(), translation);
 
         }
 
@@ -42,7 +49,7 @@ namespace Editor.Trans
             {
                 Directory.CreateDirectory(Environment.CurrentDirectory + @"\Editor\Translation\");
             }
-            BinaryWriter wr = new BinaryWriter(File.Open(Environment.CurrentDirectory + @"\Editor\Translation\" + textBox1.Text + ".lan",FileMode.Create));
+            BinaryWriter wr = new BinaryWriter(File.Open(Environment.CurrentDirectory + @"\Editor\Translation\" + translation.name.LanguageName + ".lan",FileMode.Create));
             this.translation.write(wr);
         }
 
@@ -71,6 +78,26 @@ namespace Editor.Trans
                     comboBox2.Items.Add(x);
                 }
             }
+        }
+        public void fillItmes()
+        {
+            LanTrans x = this.tanslations["English"];
+            foreach (string xp in x.Langagetrans.Keys)
+            {
+                comboBox1.Items.Add(xp);
+            }
+            
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillItmes();
+            this.translation = tanslations[comboBox2.SelectedItem.ToString()];
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox2.Text = comboBox1.Items[comboBox1.SelectedIndex].ToString();
         }
     }
 }

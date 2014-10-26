@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Windows.Forms;
 namespace ROTM_MU002.Windows
 {
     public class Laguage
@@ -33,7 +34,7 @@ namespace ROTM_MU002.Windows
     {
         #region values
         public Laguage name = new Laguage();
-        Dictionary<string, String> Langagetrans = new Dictionary<string, string>();
+        public Dictionary<string, String> Langagetrans = new Dictionary<string, string>();
         #endregion
         #region logic
         public LanTrans(string name)
@@ -41,6 +42,11 @@ namespace ROTM_MU002.Windows
         public LanTrans() { }
         public void addTrans(string english, string trans)
         { this.Langagetrans.Add(english, trans); }
+        public string tr(string x)
+        {
+            
+            return Langagetrans[x];
+        }
         #endregion
         #region read,write
         public void read(BinaryReader re)
