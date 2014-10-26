@@ -9,8 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using LibRealm.Characters;
 using LibRealm.Base;
+using LibRealm.Characters;
 namespace LibRealm
 {
     public sealed class DataManager

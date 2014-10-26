@@ -117,4 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>How to make new translation
+-------------------------------------
+if your language isnt under the langauges selection please type new language name under new language
+then click add language
+then find your language under the languages dropdown
+then select the item you wish to translate under item to translate dropdown
+then type translation under the translation textbox
+then click add translation
+repet last 3 steps untill you have finished them
+then click save translations
+
+</value>
+  </data>
 </root>

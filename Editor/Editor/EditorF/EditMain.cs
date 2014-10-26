@@ -118,42 +118,42 @@ namespace Editor.EditorF
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             #region Races
-            if (this.treeView1.SelectedNode.Text == TransWord("Races"))
+            if (this.treeView1.SelectedNode.Text == this.TransWord("Races"))
             {
                 this.listView1.Items.Clear();
                 this.listView1.Columns.Clear();
                 ColumnHeader head = new ColumnHeader();
-                head.Text =TransWord("Name");
+                head.Text = this.TransWord("Name");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("ID");
+                head.Text = this.TransWord("ID");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("BodyFile");
+                head.Text = this.TransWord("BodyFile");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("Stat-Str");
+                head.Text = this.TransWord("Stat-Str");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("Stat-Int");
+                head.Text = this.TransWord("Stat-Int");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("Stat-Wis");
+                head.Text = this.TransWord("Stat-Wis");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("stat-Dex");
+                head.Text = this.TransWord("stat-Dex");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("Stat-Agi");
+                head.Text = this.TransWord("Stat-Agi");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("Stat-Endure");
+                head.Text = this.TransWord("Stat-Endure");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("Stat-Kno");
+                head.Text = this.TransWord("Stat-Kno");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("Stat-Per");
+                head.Text = this.TransWord("Stat-Per");
                 this.listView1.Columns.Add(head);
                 this.listView1.ContextMenuStrip = this.RaceMen;
                 this.addRaces();
@@ -165,10 +165,10 @@ namespace Editor.EditorF
                 this.listView1.Items.Clear();
                 this.listView1.Columns.Clear();
                 ColumnHeader head = new ColumnHeader();
-                head.Text =TransWord("Name");
+                head.Text = this.TransWord("Name");
                 this.listView1.Columns.Add(head);
                 head = new ColumnHeader();
-                head.Text =TransWord("ID");
+                head.Text = this.TransWord("ID");
                 this.listView1.Columns.Add(head);
                 this.AddElems();
             }
@@ -249,7 +249,8 @@ namespace Editor.EditorF
                 this.trns.read(wr);
                 wr.Close();
             }
-            catch { MessageBox.Show("Please Select your Language,go Options>Options then choose your language and save"); }
+            catch
+            { MessageBox.Show("Please Select your Language,go Options>Options then choose your language and save"); }
             this.translate();
         }
         public void translate()
@@ -322,16 +323,14 @@ namespace Editor.EditorF
                     }
                 }
             }
-
             #endregion
         }
         public string TransWord(string word)
         {
             try
-            {
-                return this.trns.tr(word);
-            }
-            catch { return word; }
+            { return this.trns.tr(word); }
+            catch
+            { return word; }
         }
         #endregion
         #region unfinished

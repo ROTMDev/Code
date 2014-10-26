@@ -63,8 +63,8 @@ namespace Editor.Ra
             if (this.editing)
             { this.editor.races.Remove(this.numBox9.IntValue); }
             this.editor.races.Add(this.numBox9.IntValue, newRace);
-            editor.edits = Editing.True;
-            editor.addRaces();
+            this.editor.edits = Editing.True;
+            this.editor.addRaces();
             this.Close();
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
