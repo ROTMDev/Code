@@ -98,6 +98,12 @@
       <DependentUpon>EditMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsDeviceService.cs" />
+    <Compile Include="Options\OptMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\OptMenu.Designer.cs">
+      <DependentUpon>OptMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
@@ -108,6 +114,12 @@
       <DependentUpon>RaceEdi.cs</DependentUpon>
     </Compile>
     <Compile Include="ServiceContainer.cs" />
+    <Compile Include="Trans\TransCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trans\TransCreator.Designer.cs">
+      <DependentUpon>TransCreator.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -133,8 +145,14 @@
     <EmbeddedResource Include="EditorF\EditMain.resx">
       <DependentUpon>EditMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Options\OptMenu.resx">
+      <DependentUpon>OptMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ra\RaceEdi.resx">
       <DependentUpon>RaceEdi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trans\TransCreator.resx">
+      <DependentUpon>TransCreator.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

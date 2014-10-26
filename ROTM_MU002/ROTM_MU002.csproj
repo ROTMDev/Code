@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\Laguage.cs" />
     <Compile Include="Windows\NumBox.cs">
       <SubType>Component</SubType>
     </Compile>

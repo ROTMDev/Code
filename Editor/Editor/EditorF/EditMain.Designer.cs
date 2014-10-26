@@ -30,60 +30,60 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMain));
-            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("Races");
-            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("Monsters");
-            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("Playable");
-            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("NPC");
-            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("Combat Jobs");
-            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("World Jobs");
-            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("Characters", new System.Windows.Forms.TreeNode[] {
-            treeNode61,
-            treeNode62,
-            treeNode63,
-            treeNode64,
-            treeNode65,
-            treeNode66});
-            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("Useable");
-            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("Quest");
-            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("Weapons");
-            System.Windows.Forms.TreeNode treeNode71 = new System.Windows.Forms.TreeNode("Armor");
-            System.Windows.Forms.TreeNode treeNode72 = new System.Windows.Forms.TreeNode("Static");
-            System.Windows.Forms.TreeNode treeNode73 = new System.Windows.Forms.TreeNode("Items", new System.Windows.Forms.TreeNode[] {
-            treeNode68,
-            treeNode69,
-            treeNode70,
-            treeNode71,
-            treeNode72});
-            System.Windows.Forms.TreeNode treeNode74 = new System.Windows.Forms.TreeNode("Objects-Game", new System.Windows.Forms.TreeNode[] {
-            treeNode73});
-            System.Windows.Forms.TreeNode treeNode75 = new System.Windows.Forms.TreeNode("Maps");
-            System.Windows.Forms.TreeNode treeNode76 = new System.Windows.Forms.TreeNode("Objects-World", new System.Windows.Forms.TreeNode[] {
-            treeNode75});
-            System.Windows.Forms.TreeNode treeNode77 = new System.Windows.Forms.TreeNode("Quests");
-            System.Windows.Forms.TreeNode treeNode78 = new System.Windows.Forms.TreeNode("Quests", new System.Windows.Forms.TreeNode[] {
-            treeNode77});
-            System.Windows.Forms.TreeNode treeNode79 = new System.Windows.Forms.TreeNode("StringGlobals");
-            System.Windows.Forms.TreeNode treeNode80 = new System.Windows.Forms.TreeNode("Int Globals");
-            System.Windows.Forms.TreeNode treeNode81 = new System.Windows.Forms.TreeNode("Bool globals");
-            System.Windows.Forms.TreeNode treeNode82 = new System.Windows.Forms.TreeNode("Byte Globals");
-            System.Windows.Forms.TreeNode treeNode83 = new System.Windows.Forms.TreeNode("Data", new System.Windows.Forms.TreeNode[] {
-            treeNode79,
-            treeNode80,
-            treeNode81,
-            treeNode82});
-            System.Windows.Forms.TreeNode treeNode84 = new System.Windows.Forms.TreeNode("Settings");
-            System.Windows.Forms.TreeNode treeNode85 = new System.Windows.Forms.TreeNode("Elements");
-            System.Windows.Forms.TreeNode treeNode86 = new System.Windows.Forms.TreeNode("TileMaps");
-            System.Windows.Forms.TreeNode treeNode87 = new System.Windows.Forms.TreeNode("Skin Types");
-            System.Windows.Forms.TreeNode treeNode88 = new System.Windows.Forms.TreeNode("Body Types");
-            System.Windows.Forms.TreeNode treeNode89 = new System.Windows.Forms.TreeNode("Icons");
-            System.Windows.Forms.TreeNode treeNode90 = new System.Windows.Forms.TreeNode("Engine", new System.Windows.Forms.TreeNode[] {
-            treeNode84,
-            treeNode85,
-            treeNode86,
-            treeNode87,
-            treeNode88,
-            treeNode89});
+            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Races");
+            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Monsters");
+            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Playable");
+            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("NPC");
+            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Combat Jobs");
+            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("World Jobs");
+            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Characters", new System.Windows.Forms.TreeNode[] {
+            treeNode31,
+            treeNode32,
+            treeNode33,
+            treeNode34,
+            treeNode35,
+            treeNode36});
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Useable");
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Quest");
+            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Weapons");
+            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Armor");
+            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Static");
+            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("Items", new System.Windows.Forms.TreeNode[] {
+            treeNode38,
+            treeNode39,
+            treeNode40,
+            treeNode41,
+            treeNode42});
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("Objects-Game", new System.Windows.Forms.TreeNode[] {
+            treeNode43});
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("Maps");
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("Objects-World", new System.Windows.Forms.TreeNode[] {
+            treeNode45});
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("Quest Data");
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("Quests", new System.Windows.Forms.TreeNode[] {
+            treeNode47});
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("StringGlobals");
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("Int Globals");
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("Bool globals");
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("Byte Globals");
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("Data", new System.Windows.Forms.TreeNode[] {
+            treeNode49,
+            treeNode50,
+            treeNode51,
+            treeNode52});
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("Settings");
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("Elements");
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("TileMaps");
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("Skin Types");
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("Body Types");
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("Icons");
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("Engine", new System.Windows.Forms.TreeNode[] {
+            treeNode54,
+            treeNode55,
+            treeNode56,
+            treeNode57,
+            treeNode58,
+            treeNode59});
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,6 +93,8 @@
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.translateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editTranslationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,14 +102,7 @@
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arrangeIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.printPreviewToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
@@ -125,6 +120,9 @@
             this.RaceMen = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ElemCon = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -133,6 +131,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.RaceMen.SuspendLayout();
+            this.ElemCon.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -208,7 +207,8 @@
             // toolsMenu
             // 
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem});
+            this.optionsToolStripMenuItem,
+            this.translateToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(48, 20);
             this.toolsMenu.Text = "&Tools";
@@ -219,6 +219,21 @@
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
+            // 
+            // translateToolStripMenuItem
+            // 
+            this.translateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editTranslationToolStripMenuItem});
+            this.translateToolStripMenuItem.Name = "translateToolStripMenuItem";
+            this.translateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.translateToolStripMenuItem.Text = "Translate";
+            // 
+            // editTranslationToolStripMenuItem
+            // 
+            this.editTranslationToolStripMenuItem.Name = "editTranslationToolStripMenuItem";
+            this.editTranslationToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.editTranslationToolStripMenuItem.Text = "EditTranslation";
+            this.editTranslationToolStripMenuItem.Click += new System.EventHandler(this.editTranslationToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -235,74 +250,47 @@
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cascadeToolStripMenuItem.Text = "&Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeAllToolStripMenuItem.Text = "C&lose All";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
             // toolStrip
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.toolStripSeparator1,
-            this.printToolStripButton,
-            this.printPreviewToolStripButton,
-            this.toolStripSeparator2,
-            this.helpToolStripButton});
+            this.saveToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(1049, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
-            // 
-            // newToolStripButton
-            // 
-            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
-            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.newToolStripButton.Name = "newToolStripButton";
-            this.newToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.newToolStripButton.Text = "New";
-            this.newToolStripButton.Click += new System.EventHandler(this.ShowNewForm);
-            // 
-            // openToolStripButton
-            // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.openToolStripButton.Text = "Open";
-            this.openToolStripButton.Click += new System.EventHandler(this.OpenFile);
             // 
             // saveToolStripButton
             // 
@@ -313,43 +301,6 @@
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "Save";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // printToolStripButton
-            // 
-            this.printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripButton.Image")));
-            this.printToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.printToolStripButton.Name = "printToolStripButton";
-            this.printToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.printToolStripButton.Text = "Print";
-            // 
-            // printPreviewToolStripButton
-            // 
-            this.printPreviewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.printPreviewToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripButton.Image")));
-            this.printPreviewToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.printPreviewToolStripButton.Name = "printPreviewToolStripButton";
-            this.printPreviewToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.printPreviewToolStripButton.Text = "Print Preview";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // helpToolStripButton
-            // 
-            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
-            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.helpToolStripButton.Name = "helpToolStripButton";
-            this.helpToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.helpToolStripButton.Text = "Help";
             // 
             // statusStrip
             // 
@@ -406,7 +357,7 @@
             // 
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
             this.toolStripStatusLabel5.Size = new System.Drawing.Size(97, 17);
-            this.toolStripStatusLabel5.Text = "| Version: | 1.0.0.0";
+            this.toolStripStatusLabel5.Text = "| Version: | 1.0.0.2";
             // 
             // splitContainer1
             // 
@@ -430,73 +381,73 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode61.Name = "Node1";
-            treeNode61.Text = "Races";
-            treeNode62.Name = "Node3";
-            treeNode62.Text = "Monsters";
-            treeNode63.Name = "Node4";
-            treeNode63.Text = "Playable";
-            treeNode64.Name = "Node5";
-            treeNode64.Text = "NPC";
-            treeNode65.Name = "Node6";
-            treeNode65.Text = "Combat Jobs";
-            treeNode66.Name = "Node7";
-            treeNode66.Text = "World Jobs";
-            treeNode67.Name = "Node0";
-            treeNode67.Text = "Characters";
-            treeNode68.Name = "Node18";
-            treeNode68.Text = "Useable";
-            treeNode69.Name = "Node19";
-            treeNode69.Text = "Quest";
-            treeNode70.Name = "Node20";
-            treeNode70.Text = "Weapons";
-            treeNode71.Name = "Node21";
-            treeNode71.Text = "Armor";
-            treeNode72.Name = "Node22";
-            treeNode72.Text = "Static";
-            treeNode73.Name = "Node12";
-            treeNode73.Text = "Items";
-            treeNode74.Name = "Node11";
-            treeNode74.Text = "Objects-Game";
-            treeNode75.Name = "Node41";
-            treeNode75.Text = "Maps";
-            treeNode76.Name = "Node23";
-            treeNode76.Text = "Objects-World";
-            treeNode77.Name = "Node35";
-            treeNode77.Text = "Quests";
-            treeNode78.Name = "Node24";
-            treeNode78.Text = "Quests";
-            treeNode79.Name = "Node31";
-            treeNode79.Text = "StringGlobals";
-            treeNode80.Name = "Node32";
-            treeNode80.Text = "Int Globals";
-            treeNode81.Name = "Node33";
-            treeNode81.Text = "Bool globals";
-            treeNode82.Name = "Node34";
-            treeNode82.Text = "Byte Globals";
-            treeNode83.Name = "Node25";
-            treeNode83.Text = "Data";
-            treeNode84.Name = "Node30";
-            treeNode84.Text = "Settings";
-            treeNode85.Name = "Node40";
-            treeNode85.Text = "Elements";
-            treeNode86.Name = "Node39";
-            treeNode86.Text = "TileMaps";
-            treeNode87.Name = "Node38";
-            treeNode87.Text = "Skin Types";
-            treeNode88.Name = "Node37";
-            treeNode88.Text = "Body Types";
-            treeNode89.Name = "Node36";
-            treeNode89.Text = "Icons";
-            treeNode90.Name = "Node26";
-            treeNode90.Text = "Engine";
+            treeNode31.Name = "Node1";
+            treeNode31.Text = "Races";
+            treeNode32.Name = "Node3";
+            treeNode32.Text = "Monsters";
+            treeNode33.Name = "Node4";
+            treeNode33.Text = "Playable";
+            treeNode34.Name = "Node5";
+            treeNode34.Text = "NPC";
+            treeNode35.Name = "Node6";
+            treeNode35.Text = "Combat Jobs";
+            treeNode36.Name = "Node7";
+            treeNode36.Text = "World Jobs";
+            treeNode37.Name = "Node0";
+            treeNode37.Text = "Characters";
+            treeNode38.Name = "Node18";
+            treeNode38.Text = "Useable";
+            treeNode39.Name = "Node19";
+            treeNode39.Text = "Quest";
+            treeNode40.Name = "Node20";
+            treeNode40.Text = "Weapons";
+            treeNode41.Name = "Node21";
+            treeNode41.Text = "Armor";
+            treeNode42.Name = "Node22";
+            treeNode42.Text = "Static";
+            treeNode43.Name = "Node12";
+            treeNode43.Text = "Items";
+            treeNode44.Name = "Node11";
+            treeNode44.Text = "Objects-Game";
+            treeNode45.Name = "Node41";
+            treeNode45.Text = "Maps";
+            treeNode46.Name = "Node23";
+            treeNode46.Text = "Objects-World";
+            treeNode47.Name = "Node35";
+            treeNode47.Text = "Quest Data";
+            treeNode48.Name = "Node24";
+            treeNode48.Text = "Quests";
+            treeNode49.Name = "Node31";
+            treeNode49.Text = "StringGlobals";
+            treeNode50.Name = "Node32";
+            treeNode50.Text = "Int Globals";
+            treeNode51.Name = "Node33";
+            treeNode51.Text = "Bool globals";
+            treeNode52.Name = "Node34";
+            treeNode52.Text = "Byte Globals";
+            treeNode53.Name = "Node25";
+            treeNode53.Text = "Data";
+            treeNode54.Name = "Node30";
+            treeNode54.Text = "Settings";
+            treeNode55.Name = "Node40";
+            treeNode55.Text = "Elements";
+            treeNode56.Name = "Node39";
+            treeNode56.Text = "TileMaps";
+            treeNode57.Name = "Node38";
+            treeNode57.Text = "Skin Types";
+            treeNode58.Name = "Node37";
+            treeNode58.Text = "Body Types";
+            treeNode59.Name = "Node36";
+            treeNode59.Text = "Icons";
+            treeNode60.Name = "Node26";
+            treeNode60.Text = "Engine";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode67,
-            treeNode74,
-            treeNode76,
-            treeNode78,
-            treeNode83,
-            treeNode90});
+            treeNode37,
+            treeNode44,
+            treeNode46,
+            treeNode48,
+            treeNode53,
+            treeNode60});
             this.treeView1.Size = new System.Drawing.Size(194, 551);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -548,6 +499,28 @@
             this.newToolStripMenuItem1.Text = "New";
             this.newToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
             // 
+            // ElemCon
+            // 
+            this.ElemCon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem,
+            this.editToolStripMenuItem1});
+            this.ElemCon.Name = "ElemCon";
+            this.ElemCon.Size = new System.Drawing.Size(99, 48);
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
+            this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
+            // 
             // EditMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,7 +533,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "EditMain";
-            this.Text = "EditMain";
+            this.Text = "Realms of the Mind Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditMain_FormClosing);
             this.Load += new System.EventHandler(this.EditMain_Load);
             this.menuStrip.ResumeLayout(false);
@@ -574,6 +547,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.RaceMen.ResumeLayout(false);
+            this.ElemCon.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,8 +558,6 @@
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileMenu;
@@ -601,12 +573,7 @@
         private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arrangeIconsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
-        private System.Windows.Forms.ToolStripButton printToolStripButton;
-        private System.Windows.Forms.ToolStripButton printPreviewToolStripButton;
-        private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView treeView1;
@@ -622,6 +589,11 @@
         private System.Windows.Forms.ContextMenuStrip RaceMen;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip ElemCon;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem translateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editTranslationToolStripMenuItem;
     }
 }
 

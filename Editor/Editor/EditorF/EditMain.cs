@@ -15,53 +15,33 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Editor.Ra;
+using LibRealm.Base;
 using LibRealm.Characters;
+using ROTM_MU002.Windows;
+using Editor.Trans;
+using Editor.Options;
 namespace Editor.EditorF
 {
-    public enum Editing { True, False }
+    public enum Editing
+    {
+        True,
+        False
+    }
+
     public partial class EditMain : Form
     {
+        #region values
         public Editing edits = Editing.False;
         public Dictionary<int, Race> races = new Dictionary<int, Race>();
+        public Dictionary<int, Elements> elems = new Dictionary<int, Elements>();
+        public LanTrans trns = new LanTrans();
+        #endregion
         #region premade(Need Edited)
         private int childFormNumber = 0;
         public EditMain()
         { this.InitializeComponent(); }
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = string.Format("Window {0}", this.childFormNumber++);
-            childForm.Show();
-        }
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
-        }
-        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
-        }
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         { this.Close(); }
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        { }
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        { }
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        { }
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         { this.toolStrip.Visible = this.toolBarToolStripMenuItem.Checked; }
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,6 +60,7 @@ namespace Editor.EditorF
             { childForm.Close(); }
         }
         #endregion
+        #region Custom events
         private void EditMain_Load(object sender, EventArgs e)
         {
             this.backgroundWorker1.WorkerReportsProgress = true;
@@ -117,11 +98,6 @@ namespace Editor.EditorF
         { this.toolStripStatusLabel2.Text = "Complete"; }
         private void treeView1_DoubleClick(object sender, EventArgs e)
         { }
-        public Int32 getid()
-        {
-            int intselectedindex = this.listView1.SelectedIndices[0];
-            return intselectedindex + 1; 
-        }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         { }
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,28 +114,6 @@ namespace Editor.EditorF
                 wriRace.Write(wr);
             }
             wr.Close();
-        }
-        public void addRaces()
-        {
-            this.listView1.Items.Clear();
-            foreach (int x in this.races.Keys)
-            {
-                Race p = this.races[x];
-                List<string> xz = new List<string>();
-                xz.Add(p.Name);
-                xz.Add(p.RaceID.ToString());
-                xz.Add(p.BodyPath);
-                xz.Add(p.BaseStats.Strength.ToString());
-                xz.Add(p.BaseStats.Intelligence.ToString());
-                xz.Add(p.BaseStats.Wisdom.ToString());
-                xz.Add(p.BaseStats.Dextarity.ToString());
-                xz.Add(p.BaseStats.Agility.ToString());
-                xz.Add(p.BaseStats.Endure.ToString());
-                xz.Add(p.BaseStats.Knoledge.ToString());
-                xz.Add(p.BaseStats.Perception.ToString());
-                ListViewItem xd = new ListViewItem(xz.ToArray());
-                this.listView1.Items.Add(xd);
-            }
         }
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -205,29 +159,106 @@ namespace Editor.EditorF
                 this.addRaces();
             }
             #endregion
+            #region elem
+            if (this.treeView1.SelectedNode.Text == "Elements")
+            {
+                this.listView1.Items.Clear();
+                this.listView1.Columns.Clear();
+                ColumnHeader head = new ColumnHeader();
+                head.Text = "Name";
+                this.listView1.Columns.Add(head);
+                head=new ColumnHeader();
+                head.Text="ID";
+                this.listView1.Columns.Add(head);
+                AddElems();
+
+            }
+            #endregion
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RaceEdi nx = new RaceEdi(this, true);
-            nx.ShowDialog();
+            nx.Show(this);
         }
         private void newToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             RaceEdi nx = new RaceEdi(this, false);
-            nx.ShowDialog();
+            nx.Show(this);
         }
-
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        { OptMenu opts = new OptMenu();opts.ShowDialog(); }
         private void EditMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.edits == Editing.True)
+            { this.backgroundWorker1.RunWorkerAsync(); }
+        }
+        #endregion
+        #region custom logic
+        public void addRaces()
+        {
+            this.listView1.Items.Clear();
+            foreach (int x in this.races.Keys)
             {
-                backgroundWorker1.RunWorkerAsync();
+                Race p = this.races[x];
+                List<string> xz = new List<string>();
+                xz.Add(p.Name);
+                xz.Add(p.RaceID.ToString());
+                xz.Add(p.BodyPath);
+                xz.Add(p.BaseStats.Strength.ToString());
+                xz.Add(p.BaseStats.Intelligence.ToString());
+                xz.Add(p.BaseStats.Wisdom.ToString());
+                xz.Add(p.BaseStats.Dextarity.ToString());
+                xz.Add(p.BaseStats.Agility.ToString());
+                xz.Add(p.BaseStats.Endure.ToString());
+                xz.Add(p.BaseStats.Knoledge.ToString());
+                xz.Add(p.BaseStats.Perception.ToString());
+                ListViewItem xd = new ListViewItem(xz.ToArray());
+                this.listView1.Items.Add(xd);
             }
+        }
+        public Int32 getid()
+        {
+            int intselectedindex = this.listView1.SelectedIndices[0];
+            return intselectedindex + 1;
+        }
+        public void AddElems()
+        {
+            this.listView1.Items.Clear();
+            foreach (int x in this.elems.Keys)
+            {
+                Elements xp = this.elems[x];
+                List<string> tolist = new List<string>();
+                tolist.Add(xp.Name);
+                tolist.Add(xp.ID.ToString());
+                ListViewItem toitem = new ListViewItem(tolist.ToArray());
+                this.listView1.Items.Add(toitem);
+            }
+        }
+        public void setLanguage()
+        {
+            BinaryReader wr = new BinaryReader(File.Open(Environment.CurrentDirectory + @"\opt.op", FileMode.Open));
+            Laguage xp = new Laguage();
+            xp.Read(wr);
+            wr.Close();
+        }
+        #endregion
+
+        #region unfinished
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        private void editTranslationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransCreator creator = new TransCreator();
+            creator.ShowDialog(this);
         }
     }
 }

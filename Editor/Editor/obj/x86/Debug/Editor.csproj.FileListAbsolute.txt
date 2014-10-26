@@ -20,3 +20,4 @@ C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.Trans.TransCreator.resources
