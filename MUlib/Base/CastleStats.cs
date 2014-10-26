@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =CastleStats.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =MUlib=
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +14,6 @@ namespace LibRealm.Base
     public sealed class CastleStats
     {
         #region values
-        
         private Int32 leadership;
         private Int32 command;
         private Int32 meconized;

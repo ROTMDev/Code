@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =Game1.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =Editor=
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +29,6 @@ namespace Editor
             this.graphics = new GraphicsDeviceManager(this);
             this.Content.RootDirectory = "Content";
         }
-
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -43,7 +41,6 @@ namespace Editor
 
             base.Draw(gameTime);
         }
-
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
@@ -55,7 +52,6 @@ namespace Editor
             // TODO: Add your initialization logic here
             base.Initialize();
         }
-
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -66,14 +62,12 @@ namespace Editor
             this.spriteBatch = new SpriteBatch(this.GraphicsDevice);
             // TODO: use this.Content to load your game content here
         }
-
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
         /// </summary>
         protected override void UnloadContent()
         { }
-
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.

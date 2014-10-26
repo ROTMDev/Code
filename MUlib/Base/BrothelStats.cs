@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =BrothelStats.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =MUlib=
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +14,6 @@ namespace LibRealm.Base
     public sealed class BrothelStats
     {
         #region values
-        
         private Int32 domanance;
         private Int32 wealth;
         private Int32 friendlness;

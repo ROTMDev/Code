@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =GraphicsDeviceControl.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =Editor=
-
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -28,14 +27,11 @@ namespace Editor
     abstract public class GraphicsDeviceControl : Control
     {
         #region Fields
-        
         // However many GraphicsDeviceControl instances you have, they all share
         // the same underlying GraphicsDevice, managed by this helper service.
         GraphicsDeviceService graphicsDeviceService;
         #endregion
-        
         #region Properties
-        
         /// <summary>
         /// Gets a GraphicsDevice that can be used to draw onto this control.
         /// </summary>
@@ -43,7 +39,6 @@ namespace Editor
         {
             get { return this.graphicsDeviceService.GraphicsDevice; }
         }
-        
         /// <summary>
         /// Gets an IServiceProvider containing our IGraphicsDeviceService.
         /// This can be used with components such as the ContentManager,
@@ -53,12 +48,9 @@ namespace Editor
         {
             get { return this.services; }
         }
-        
         ServiceContainer services = new ServiceContainer();
         #endregion
-        
         #region Initialization
-        
         /// <summary>
         /// Initializes the control.
         /// </summary>
@@ -80,7 +72,6 @@ namespace Editor
             
             base.OnCreateControl();
         }
-        
         /// <summary>
         /// Disposes the control.
         /// </summary>
@@ -95,9 +86,7 @@ namespace Editor
             base.Dispose(disposing);
         }
         #endregion
-
         #region Paint
-
         /// <summary>
         /// Redraws the control in response to a WinForms paint message.
         /// </summary>
@@ -114,7 +103,6 @@ namespace Editor
             else
             { this.PaintUsingSystemDrawing(e.Graphics, beginDrawError); }
         }
-        
         /// <summary>
         /// Attempts to begin drawing the control. Returns an error message string
         /// if this was not possible, which can happen if the graphics device is
@@ -128,7 +116,7 @@ namespace Editor
             
             // Make sure the graphics device is big enough, and is not lost.
             string deviceResetError = this.HandleDeviceReset();
-
+            
             if (!string.IsNullOrEmpty(deviceResetError))
             { return deviceResetError; }
 
@@ -141,7 +129,7 @@ namespace Editor
             
             viewport.X = 0;
             viewport.Y = 0;
-
+            
             viewport.Width = this.ClientSize.Width;
             viewport.Height = this.ClientSize.Height;
 
@@ -152,7 +140,6 @@ namespace Editor
             
             return null;
         }
-
         /// <summary>
         /// Ends drawing the control. This is called after derived classes
         /// have finished their Draw method, and is responsible for presenting
@@ -171,7 +158,6 @@ namespace Editor
             catch
             { }
         }
-        
         /// <summary>
         /// Helper used by BeginDraw. This checks the graphics device status,
         /// making sure it is big enough for drawing the current control, and
@@ -208,7 +194,6 @@ namespace Editor
             
             return null;
         }
-
         /// <summary>
         /// If we do not have a valid graphics device (for instance if the device
         /// is lost, or if we are running inside the Form designer), we must use
@@ -229,7 +214,6 @@ namespace Editor
                 }
             }
         }
-        
         /// <summary>
         /// Ignores WinForms paint-background messages. The default implementation
         /// would clear the control to the current background color, causing
@@ -239,14 +223,11 @@ namespace Editor
         protected override void OnPaintBackground(PaintEventArgs pevent)
         { }
         #endregion
-        
         #region Abstract Methods
-        
         /// <summary>
         /// Derived classes override this to initialize their drawing code.
         /// </summary>
         protected abstract void Initialize();
-        
         /// <summary>
         /// Derived classes override this to draw themselves using the GraphicsDevice.
         /// </summary>

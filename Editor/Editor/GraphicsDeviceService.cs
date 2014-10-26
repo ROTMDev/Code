@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =GraphicsDeviceService.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =Editor=
-
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -27,13 +26,11 @@ namespace Editor
     class GraphicsDeviceService : IGraphicsDeviceService
     {
         #region Fields
-        
         // Singleton device service instance.
         static GraphicsDeviceService singletonInstance;
         // Keep track of how many controls are sharing the singletonInstance.
         static int referenceCount;
         #endregion
-        
         /// <summary>
         /// Constructor is private, because this is a singleton class:
         /// client controls should use the public AddRef method instead.
@@ -54,7 +51,6 @@ namespace Editor
                 GraphicsProfile.Reach,
                 this.parameters);
         }
-        
         /// <summary>
         /// Gets a reference to the singleton instance.
         /// </summary>
@@ -68,7 +64,6 @@ namespace Editor
             
             return singletonInstance;
         }
-        
         /// <summary>
         /// Releases a reference to the singleton instance.
         /// </summary>
@@ -90,7 +85,6 @@ namespace Editor
                 this.graphicsDevice = null;
             }
         }
-        
         /// <summary>
         /// Resets the graphics device to whichever is bigger out of the specified
         /// resolution or its current size. This behavior means the device will
@@ -109,7 +103,6 @@ namespace Editor
             if (this.DeviceReset != null)
             { this.DeviceReset(this, EventArgs.Empty); }
         }
-        
         /// <summary>
         /// Gets the current graphics device.
         /// </summary>
@@ -117,17 +110,13 @@ namespace Editor
         {
             get { return this.graphicsDevice; }
         }
-        
         GraphicsDevice graphicsDevice;
         // Store the current device settings.
         PresentationParameters parameters;
         // IGraphicsDeviceService events.
         public event EventHandler<EventArgs> DeviceCreated;
-        
         public event EventHandler<EventArgs> DeviceDisposing;
-        
         public event EventHandler<EventArgs> DeviceReset;
-        
         public event EventHandler<EventArgs> DeviceResetting;
     }
 }

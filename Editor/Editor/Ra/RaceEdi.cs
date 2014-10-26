@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =RaceEdi.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =Editor=
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +16,6 @@ using System.Windows.Forms;
 using Editor.EditorF;
 using LibRealm.Base;
 using LibRealm.Characters;
-
 namespace Editor.Ra
 {
     public partial class RaceEdi : Form
@@ -48,7 +46,6 @@ namespace Editor.Ra
             else
             { this.numBox9.Text = (this.editor.races.Count + 1).ToString(); }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Stats NewStats = new Stats();
@@ -66,7 +63,6 @@ namespace Editor.Ra
             { this.editor.races.Remove(this.numBox9.IntValue); }
             this.editor.races.Add(this.numBox9.IntValue, newRace);
         }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         { this.Close(); }
     }

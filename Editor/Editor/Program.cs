@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =Program.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =Editor=
-
 using System;
 using System.Windows.Forms;
 using Editor.EditorF;

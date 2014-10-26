@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =NumBox.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =ROTM_MU002=
-  
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -21,7 +20,6 @@ namespace ROTM_MU002.Windows
         {
             get { return Int32.Parse(this.Text); }
         }
-
         // Restricts the entry of characters to digits (including hex), the negative sign, 
         // the decimal point, and editing keystrokes (backspace). 
         protected override void OnKeyPress(KeyPressEventArgs e)

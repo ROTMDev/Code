@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =Stats.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =MUlib=
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,12 +15,10 @@ namespace LibRealm.Base
     public sealed class Stats
     {
         #region classes
-        
         public Stats()
         { }
         #endregion
         #region Values
-        
         private Int32 strength;
         private Int32 intelligence;
         private Int32 dextarity;
@@ -32,49 +29,41 @@ namespace LibRealm.Base
         private Int32 perception;
         #endregion
         #region gets/sets
-        
         public int Perception
         {
             get { return this.perception; }
             set { this.perception = value; }
         }
-        
         public int Knoledge
         {
             get { return this.knoledge; }
             set { this.knoledge = value; }
         }
-        
         public int Endure
         {
             get { return this.endure; }
             set { this.endure = value; }
         }
-        
         public int Agility
         {
             get { return this.agility; }
             set { this.agility = value; }
         }
-        
         public int Wisdom
         {
             get { return this.wisdom; }
             set { this.wisdom = value; }
         }
-        
         public int Dextarity
         {
             get { return this.dextarity; }
             set { this.dextarity = value; }
         }
-        
         public int Intelligence
         {
             get { return this.intelligence; }
             set { this.intelligence = value; }
         }
-        
         public int Strength
         {
             get { return this.strength; }
@@ -84,7 +73,6 @@ namespace LibRealm.Base
         #region Logic
         #endregion
         #region Read/Write
-        
         public void read(BinaryReader Reader)
         {
             this.agility = Reader.ReadInt32();
@@ -96,7 +84,6 @@ namespace LibRealm.Base
             this.strength = Reader.ReadInt32();
             this.wisdom = Reader.ReadInt32();
         }
-        
         public void Write(BinaryWriter writer)
         {
             writer.Write(this.agility);

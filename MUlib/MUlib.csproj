@@ -69,6 +69,7 @@
     <Compile Include="Base\BrothelStats.cs" />
     <Compile Include="Base\CastleStats.cs" />
     <Compile Include="Base\DerStats.cs" />
+    <Compile Include="Base\Elements.cs" />
     <Compile Include="Base\SexStats.cs" />
     <Compile Include="Base\Stats.cs" />
     <Compile Include="Base\Tags.cs" />

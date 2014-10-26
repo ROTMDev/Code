@@ -1,2 +1,0 @@
-C:\Users\MutationInc\Documents\GitHub\Code\ROTM_MU001\obj\x86\Release\ROTM_MU001.csprojResolveAssemblyReference.cache
-C:\Users\MutationInc\Documents\GitHub\Code\ROTM_MU001\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt

@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =Race.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =MUlib=
-
 using System;
 using System.IO;
 using LibRealm.Base;
@@ -14,32 +13,27 @@ namespace LibRealm.Characters
     public sealed class Race
     {
         #region values
-        
         private Stats baseStats = new Stats();
         private string name;
         private Int32 raceID;
         private string bodyPath;
         #endregion
         #region Gets/sets
-        
         public string BodyPath
         {
             get { return this.bodyPath; }
             private set { this.bodyPath = value; }
         }
-        
         public int RaceID
         {
             get { return this.raceID; }
             private set { this.raceID = value; }
         }
-        
         public string Name
         {
             get { return this.name; }
             private set { this.name = value; }
         }
-        
         public Stats BaseStats
         {
             get { return this.baseStats; }
@@ -49,7 +43,6 @@ namespace LibRealm.Characters
         #region logic
         #endregion
         #region class
-        
         public Race(Stats Base, string NaMe, Int32 ID, string body)
         {
             this.baseStats = Base;
@@ -57,12 +50,10 @@ namespace LibRealm.Characters
             this.raceID = ID;
             this.bodyPath = body;
         }
-        
         public Race()
         { }
         #endregion
         #region logic Read/Write
-
         public void Write(BinaryWriter wr)
         {
             wr.Write(this.name);
@@ -70,7 +61,6 @@ namespace LibRealm.Characters
             wr.Write(this.raceID);
             this.baseStats.Write(wr);
         }
-        
         public void Read(BinaryReader re)
         {
             this.name = re.ReadString();

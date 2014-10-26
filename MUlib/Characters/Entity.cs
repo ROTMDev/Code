@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =Entity.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =MUlib=
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +16,6 @@ namespace LibRealm.Characters
     public class Entity
     {
         #region values
-        
         private Stats mainStats;
         private string name;
         private string ID;
@@ -25,7 +23,6 @@ namespace LibRealm.Characters
         private bool isDead;
         #endregion
         #region Gets/Sets
-        
         public Stats MainStats
         {
             get { return this.mainStats; }

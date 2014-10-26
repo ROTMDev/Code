@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =AssemblyInfo.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =ROTM_MU002=
-
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;

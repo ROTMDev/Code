@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =EditMain.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =Editor=
-  
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,11 +22,9 @@ namespace Editor.EditorF
     {
         public Dictionary<int, Race> races = new Dictionary<int, Race>();
         #region premade(Need Edited)
-        
         private int childFormNumber = 0;
         public EditMain()
         { this.InitializeComponent(); }
-        
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -35,7 +32,6 @@ namespace Editor.EditorF
             childForm.Text = string.Format("Window {0}", this.childFormNumber++);
             childForm.Show();
         }
-        
         private void OpenFile(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -46,7 +42,6 @@ namespace Editor.EditorF
                 string FileName = openFileDialog.FileName;
             }
         }
-        
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -57,44 +52,32 @@ namespace Editor.EditorF
                 string FileName = saveFileDialog.FileName;
             }
         }
-        
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         { this.Close(); }
-        
         private void CutToolStripMenuItem_Click(object sender, EventArgs e)
         { }
-        
         private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
         { }
-        
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         { }
-        
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         { this.toolStrip.Visible = this.toolBarToolStripMenuItem.Checked; }
-        
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         { this.statusStrip.Visible = this.statusBarToolStripMenuItem.Checked; }
-        
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         { this.LayoutMdi(MdiLayout.Cascade); }
-        
         private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         { this.LayoutMdi(MdiLayout.TileVertical); }
-        
         private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         { this.LayoutMdi(MdiLayout.TileHorizontal); }
-        
         private void ArrangeIconsToolStripMenuItem_Click(object sender, EventArgs e)
         { this.LayoutMdi(MdiLayout.ArrangeIcons); }
-        
         private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form childForm in this.MdiChildren)
             { childForm.Close(); }
         }
         #endregion
-        
         private void EditMain_Load(object sender, EventArgs e)
         {
             this.backgroundWorker1.WorkerReportsProgress = true;
@@ -104,7 +87,6 @@ namespace Editor.EditorF
             ListView.CheckForIllegalCrossThreadCalls = false;
             this.backgroundWorker1.RunWorkerAsync();
         }
-        
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             if (Directory.Exists(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\")))
@@ -127,28 +109,21 @@ namespace Editor.EditorF
             else
             { MessageBox.Show("Races File does not exits, or you have an error, please check file location, or reinstall Game"); }
         }
-        
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         { this.toolStripProgressBar1.Value = e.ProgressPercentage; }
-        
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         { this.toolStripStatusLabel2.Text = "Complete"; }
-        
         private void treeView1_DoubleClick(object sender, EventArgs e)
         { }
-        
         public Int32 getid()
         {
             int intselectedindex = this.listView1.SelectedIndices[0];
             return intselectedindex + 1; 
         }
-        
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         { }
-        
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         { this.backgroundWorker2.RunWorkerAsync(); }
-        
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
             if (!Directory.Exists(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\")))
@@ -162,7 +137,6 @@ namespace Editor.EditorF
             }
             wr.Close();
         }
-        
         public void addRaces()
         {
             this.listView1.Items.Clear();
@@ -185,11 +159,9 @@ namespace Editor.EditorF
                 this.listView1.Items.Add(xd);
             }
         }
-        
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             #region Races
-            
             if (this.treeView1.SelectedNode.Text == "Races")
             {
                 this.listView1.Items.Clear();
@@ -232,13 +204,11 @@ namespace Editor.EditorF
             }
             #endregion
         }
-        
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RaceEdi nx = new RaceEdi(this, true);
             nx.ShowDialog();
         }
-        
         private void newToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             RaceEdi nx = new RaceEdi(this, false);

@@ -3,9 +3,8 @@
 // =Programmers=
 // =Mute Lovestone=
 // =ServiceContainer.cs=
-// = 10/25/2014 =
+// = 10/26/2014 =
 // =Editor=
-
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -29,7 +28,6 @@ namespace Editor
         /// </summary>
         public void AddService<T>(T service)
         { this.services.Add(typeof(T), service); }
-
         /// <summary>
         /// Looks up the specified service.
         /// </summary>
