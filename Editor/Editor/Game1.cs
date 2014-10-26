@@ -1,3 +1,11 @@
+// =Realms Engine=
+// =Realms Of the Mind=
+// =Programmers=
+// =Mute Lovestone=
+// =Game1.cs=
+// = 10/25/2014 =
+// =Editor=
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +16,6 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-
 namespace Editor
 {
     /// <summary>
@@ -18,11 +25,23 @@ namespace Editor
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
         public Game1()
         {
-            graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            this.graphics = new GraphicsDeviceManager(this);
+            this.Content.RootDirectory = "Content";
+        }
+
+        /// <summary>
+        /// This is called when the game should draw itself.
+        /// </summary>
+        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        protected override void Draw(GameTime gameTime)
+        {
+            this.GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            // TODO: Add your drawing code here
+
+            base.Draw(gameTime);
         }
 
         /// <summary>
@@ -34,7 +53,6 @@ namespace Editor
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -45,8 +63,7 @@ namespace Editor
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            this.spriteBatch = new SpriteBatch(this.GraphicsDevice);
             // TODO: use this.Content to load your game content here
         }
 
@@ -55,9 +72,7 @@ namespace Editor
         /// all content.
         /// </summary>
         protected override void UnloadContent()
-        {
-            // TODO: Unload any non ContentManager content here
-        }
+        { }
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -68,24 +83,11 @@ namespace Editor
         {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            { this.Exit(); }
 
             // TODO: Add your update logic here
 
             base.Update(gameTime);
-        }
-
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
-            base.Draw(gameTime);
         }
     }
 }

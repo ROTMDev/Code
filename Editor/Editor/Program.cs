@@ -1,12 +1,19 @@
+// =Realms Engine=
+// =Realms Of the Mind=
+// =Programmers=
+// =Mute Lovestone=
+// =Program.cs=
+// = 10/25/2014 =
+// =Editor=
+
 using System;
 using System.Windows.Forms;
 using Editor.EditorF;
 namespace Editor
 {
-#if WINDOWS || XBOX
+    #if WINDOWS || XBOX
     static class Program
     {
-        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,6 +24,5 @@ namespace Editor
             Application.Run(new EditMain());
         }
     }
-#endif
+    #endif
 }
-

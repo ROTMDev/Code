@@ -1,0 +1,8 @@
+C:\Users\MutationInc\Documents\GitHub\Code\MUlib\obj\x86\Debug\MUlib.csprojResolveAssemblyReference.cache
+C:\Users\MutationInc\Documents\GitHub\Code\MUlib\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\MutationInc\Documents\GitHub\Code\MUlib\bin\x86\Debug\lua51.dll
+C:\Users\MutationInc\Documents\GitHub\Code\MUlib\bin\x86\Debug\LuaInterface.dll
+C:\Users\MutationInc\Documents\GitHub\Code\MUlib\bin\x86\Debug\ROTM_MU001.dll
+C:\Users\MutationInc\Documents\GitHub\Code\MUlib\bin\x86\Debug\ROTM_MU001.pdb
+C:\Users\MutationInc\Documents\GitHub\Code\MUlib\obj\x86\Debug\ROTM_MU001.dll
+C:\Users\MutationInc\Documents\GitHub\Code\MUlib\obj\x86\Debug\ROTM_MU001.pdb

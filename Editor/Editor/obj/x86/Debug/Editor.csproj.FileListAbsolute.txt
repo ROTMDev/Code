@@ -1,0 +1,14 @@
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.csprojResolveAssemblyReference.cache
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.EditorF.EditMain.resources
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.csproj.GenerateResource.Cache
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Editor.exe
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Editor.pdb
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.exe
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.pdb
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Data\Menu.xnb
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.Ra.RaceEdi.resources
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\ROTM_MU002.dll
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\ROTM_MU002.pdb
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\ROTM_MU001.dll
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\ROTM_MU001.pdb

@@ -70,17 +70,6 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\AttributePair.cs" />
-    <Compile Include="Base\BrothelStats.cs" />
-    <Compile Include="Base\CastleStats.cs" />
-    <Compile Include="Base\DerStats.cs" />
-    <Compile Include="Base\SexStats.cs" />
-    <Compile Include="Base\Stats.cs" />
-    <Compile Include="Base\Tags.cs" />
-    <Compile Include="Base\WorldStats.cs" />
-    <Compile Include="Characters\Entity.cs" />
-    <Compile Include="Characters\Race.cs" />
-    <Compile Include="DataManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

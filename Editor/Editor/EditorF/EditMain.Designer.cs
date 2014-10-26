@@ -30,60 +30,60 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditMain));
-            System.Windows.Forms.TreeNode treeNode181 = new System.Windows.Forms.TreeNode("Races");
-            System.Windows.Forms.TreeNode treeNode182 = new System.Windows.Forms.TreeNode("Monsters");
-            System.Windows.Forms.TreeNode treeNode183 = new System.Windows.Forms.TreeNode("Playable");
-            System.Windows.Forms.TreeNode treeNode184 = new System.Windows.Forms.TreeNode("NPC");
-            System.Windows.Forms.TreeNode treeNode185 = new System.Windows.Forms.TreeNode("Combat Jobs");
-            System.Windows.Forms.TreeNode treeNode186 = new System.Windows.Forms.TreeNode("World Jobs");
-            System.Windows.Forms.TreeNode treeNode187 = new System.Windows.Forms.TreeNode("Characters", new System.Windows.Forms.TreeNode[] {
-            treeNode181,
-            treeNode182,
-            treeNode183,
-            treeNode184,
-            treeNode185,
-            treeNode186});
-            System.Windows.Forms.TreeNode treeNode188 = new System.Windows.Forms.TreeNode("Useable");
-            System.Windows.Forms.TreeNode treeNode189 = new System.Windows.Forms.TreeNode("Quest");
-            System.Windows.Forms.TreeNode treeNode190 = new System.Windows.Forms.TreeNode("Weapons");
-            System.Windows.Forms.TreeNode treeNode191 = new System.Windows.Forms.TreeNode("Armor");
-            System.Windows.Forms.TreeNode treeNode192 = new System.Windows.Forms.TreeNode("Static");
-            System.Windows.Forms.TreeNode treeNode193 = new System.Windows.Forms.TreeNode("Items", new System.Windows.Forms.TreeNode[] {
-            treeNode188,
-            treeNode189,
-            treeNode190,
-            treeNode191,
-            treeNode192});
-            System.Windows.Forms.TreeNode treeNode194 = new System.Windows.Forms.TreeNode("Objects-Game", new System.Windows.Forms.TreeNode[] {
-            treeNode193});
-            System.Windows.Forms.TreeNode treeNode195 = new System.Windows.Forms.TreeNode("Maps");
-            System.Windows.Forms.TreeNode treeNode196 = new System.Windows.Forms.TreeNode("Objects-World", new System.Windows.Forms.TreeNode[] {
-            treeNode195});
-            System.Windows.Forms.TreeNode treeNode197 = new System.Windows.Forms.TreeNode("Quests");
-            System.Windows.Forms.TreeNode treeNode198 = new System.Windows.Forms.TreeNode("Quests", new System.Windows.Forms.TreeNode[] {
-            treeNode197});
-            System.Windows.Forms.TreeNode treeNode199 = new System.Windows.Forms.TreeNode("StringGlobals");
-            System.Windows.Forms.TreeNode treeNode200 = new System.Windows.Forms.TreeNode("Int Globals");
-            System.Windows.Forms.TreeNode treeNode201 = new System.Windows.Forms.TreeNode("Bool globals");
-            System.Windows.Forms.TreeNode treeNode202 = new System.Windows.Forms.TreeNode("Byte Globals");
-            System.Windows.Forms.TreeNode treeNode203 = new System.Windows.Forms.TreeNode("Data", new System.Windows.Forms.TreeNode[] {
-            treeNode199,
-            treeNode200,
-            treeNode201,
-            treeNode202});
-            System.Windows.Forms.TreeNode treeNode204 = new System.Windows.Forms.TreeNode("Settings");
-            System.Windows.Forms.TreeNode treeNode205 = new System.Windows.Forms.TreeNode("Elements");
-            System.Windows.Forms.TreeNode treeNode206 = new System.Windows.Forms.TreeNode("TileMaps");
-            System.Windows.Forms.TreeNode treeNode207 = new System.Windows.Forms.TreeNode("Skin Types");
-            System.Windows.Forms.TreeNode treeNode208 = new System.Windows.Forms.TreeNode("Body Types");
-            System.Windows.Forms.TreeNode treeNode209 = new System.Windows.Forms.TreeNode("Icons");
-            System.Windows.Forms.TreeNode treeNode210 = new System.Windows.Forms.TreeNode("Engine", new System.Windows.Forms.TreeNode[] {
-            treeNode204,
-            treeNode205,
-            treeNode206,
-            treeNode207,
-            treeNode208,
-            treeNode209});
+            System.Windows.Forms.TreeNode treeNode121 = new System.Windows.Forms.TreeNode("Races");
+            System.Windows.Forms.TreeNode treeNode122 = new System.Windows.Forms.TreeNode("Monsters");
+            System.Windows.Forms.TreeNode treeNode123 = new System.Windows.Forms.TreeNode("Playable");
+            System.Windows.Forms.TreeNode treeNode124 = new System.Windows.Forms.TreeNode("NPC");
+            System.Windows.Forms.TreeNode treeNode125 = new System.Windows.Forms.TreeNode("Combat Jobs");
+            System.Windows.Forms.TreeNode treeNode126 = new System.Windows.Forms.TreeNode("World Jobs");
+            System.Windows.Forms.TreeNode treeNode127 = new System.Windows.Forms.TreeNode("Characters", new System.Windows.Forms.TreeNode[] {
+            treeNode121,
+            treeNode122,
+            treeNode123,
+            treeNode124,
+            treeNode125,
+            treeNode126});
+            System.Windows.Forms.TreeNode treeNode128 = new System.Windows.Forms.TreeNode("Useable");
+            System.Windows.Forms.TreeNode treeNode129 = new System.Windows.Forms.TreeNode("Quest");
+            System.Windows.Forms.TreeNode treeNode130 = new System.Windows.Forms.TreeNode("Weapons");
+            System.Windows.Forms.TreeNode treeNode131 = new System.Windows.Forms.TreeNode("Armor");
+            System.Windows.Forms.TreeNode treeNode132 = new System.Windows.Forms.TreeNode("Static");
+            System.Windows.Forms.TreeNode treeNode133 = new System.Windows.Forms.TreeNode("Items", new System.Windows.Forms.TreeNode[] {
+            treeNode128,
+            treeNode129,
+            treeNode130,
+            treeNode131,
+            treeNode132});
+            System.Windows.Forms.TreeNode treeNode134 = new System.Windows.Forms.TreeNode("Objects-Game", new System.Windows.Forms.TreeNode[] {
+            treeNode133});
+            System.Windows.Forms.TreeNode treeNode135 = new System.Windows.Forms.TreeNode("Maps");
+            System.Windows.Forms.TreeNode treeNode136 = new System.Windows.Forms.TreeNode("Objects-World", new System.Windows.Forms.TreeNode[] {
+            treeNode135});
+            System.Windows.Forms.TreeNode treeNode137 = new System.Windows.Forms.TreeNode("Quests");
+            System.Windows.Forms.TreeNode treeNode138 = new System.Windows.Forms.TreeNode("Quests", new System.Windows.Forms.TreeNode[] {
+            treeNode137});
+            System.Windows.Forms.TreeNode treeNode139 = new System.Windows.Forms.TreeNode("StringGlobals");
+            System.Windows.Forms.TreeNode treeNode140 = new System.Windows.Forms.TreeNode("Int Globals");
+            System.Windows.Forms.TreeNode treeNode141 = new System.Windows.Forms.TreeNode("Bool globals");
+            System.Windows.Forms.TreeNode treeNode142 = new System.Windows.Forms.TreeNode("Byte Globals");
+            System.Windows.Forms.TreeNode treeNode143 = new System.Windows.Forms.TreeNode("Data", new System.Windows.Forms.TreeNode[] {
+            treeNode139,
+            treeNode140,
+            treeNode141,
+            treeNode142});
+            System.Windows.Forms.TreeNode treeNode144 = new System.Windows.Forms.TreeNode("Settings");
+            System.Windows.Forms.TreeNode treeNode145 = new System.Windows.Forms.TreeNode("Elements");
+            System.Windows.Forms.TreeNode treeNode146 = new System.Windows.Forms.TreeNode("TileMaps");
+            System.Windows.Forms.TreeNode treeNode147 = new System.Windows.Forms.TreeNode("Skin Types");
+            System.Windows.Forms.TreeNode treeNode148 = new System.Windows.Forms.TreeNode("Body Types");
+            System.Windows.Forms.TreeNode treeNode149 = new System.Windows.Forms.TreeNode("Icons");
+            System.Windows.Forms.TreeNode treeNode150 = new System.Windows.Forms.TreeNode("Engine", new System.Windows.Forms.TreeNode[] {
+            treeNode144,
+            treeNode145,
+            treeNode146,
+            treeNode147,
+            treeNode148,
+            treeNode149});
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,17 +135,21 @@
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.RaceMen = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -153,6 +157,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.RaceMen.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -223,6 +228,7 @@
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -600,113 +606,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(45, 17);
             this.toolStripStatusLabel.Text = "Status |";
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 49);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.listView1);
-            this.splitContainer1.Size = new System.Drawing.Size(1049, 551);
-            this.splitContainer1.SplitterDistance = 195;
-            this.splitContainer1.TabIndex = 4;
-            // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            treeNode181.Name = "Node1";
-            treeNode181.Text = "Races";
-            treeNode182.Name = "Node3";
-            treeNode182.Text = "Monsters";
-            treeNode183.Name = "Node4";
-            treeNode183.Text = "Playable";
-            treeNode184.Name = "Node5";
-            treeNode184.Text = "NPC";
-            treeNode185.Name = "Node6";
-            treeNode185.Text = "Combat Jobs";
-            treeNode186.Name = "Node7";
-            treeNode186.Text = "World Jobs";
-            treeNode187.Name = "Node0";
-            treeNode187.Text = "Characters";
-            treeNode188.Name = "Node18";
-            treeNode188.Text = "Useable";
-            treeNode189.Name = "Node19";
-            treeNode189.Text = "Quest";
-            treeNode190.Name = "Node20";
-            treeNode190.Text = "Weapons";
-            treeNode191.Name = "Node21";
-            treeNode191.Text = "Armor";
-            treeNode192.Name = "Node22";
-            treeNode192.Text = "Static";
-            treeNode193.Name = "Node12";
-            treeNode193.Text = "Items";
-            treeNode194.Name = "Node11";
-            treeNode194.Text = "Objects-Game";
-            treeNode195.Name = "Node41";
-            treeNode195.Text = "Maps";
-            treeNode196.Name = "Node23";
-            treeNode196.Text = "Objects-World";
-            treeNode197.Name = "Node35";
-            treeNode197.Text = "Quests";
-            treeNode198.Name = "Node24";
-            treeNode198.Text = "Quests";
-            treeNode199.Name = "Node31";
-            treeNode199.Text = "StringGlobals";
-            treeNode200.Name = "Node32";
-            treeNode200.Text = "Int Globals";
-            treeNode201.Name = "Node33";
-            treeNode201.Text = "Bool globals";
-            treeNode202.Name = "Node34";
-            treeNode202.Text = "Byte Globals";
-            treeNode203.Name = "Node25";
-            treeNode203.Text = "Data";
-            treeNode204.Name = "Node30";
-            treeNode204.Text = "Settings";
-            treeNode205.Name = "Node40";
-            treeNode205.Text = "Elements";
-            treeNode206.Name = "Node39";
-            treeNode206.Text = "TileMaps";
-            treeNode207.Name = "Node38";
-            treeNode207.Text = "Skin Types";
-            treeNode208.Name = "Node37";
-            treeNode208.Text = "Body Types";
-            treeNode209.Name = "Node36";
-            treeNode209.Text = "Icons";
-            treeNode210.Name = "Node26";
-            treeNode210.Text = "Engine";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode187,
-            treeNode194,
-            treeNode196,
-            treeNode198,
-            treeNode203,
-            treeNode210});
-            this.treeView1.Size = new System.Drawing.Size(195, 551);
-            this.treeView1.TabIndex = 0;
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(850, 551);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
@@ -742,6 +641,146 @@
             this.toolStripStatusLabel5.Size = new System.Drawing.Size(97, 17);
             this.toolStripStatusLabel5.Text = "| Version: | 1.0.0.0";
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 49);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.listView1);
+            this.splitContainer1.Size = new System.Drawing.Size(1049, 551);
+            this.splitContainer1.SplitterDistance = 194;
+            this.splitContainer1.TabIndex = 4;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            treeNode121.Name = "Node1";
+            treeNode121.Text = "Races";
+            treeNode122.Name = "Node3";
+            treeNode122.Text = "Monsters";
+            treeNode123.Name = "Node4";
+            treeNode123.Text = "Playable";
+            treeNode124.Name = "Node5";
+            treeNode124.Text = "NPC";
+            treeNode125.Name = "Node6";
+            treeNode125.Text = "Combat Jobs";
+            treeNode126.Name = "Node7";
+            treeNode126.Text = "World Jobs";
+            treeNode127.Name = "Node0";
+            treeNode127.Text = "Characters";
+            treeNode128.Name = "Node18";
+            treeNode128.Text = "Useable";
+            treeNode129.Name = "Node19";
+            treeNode129.Text = "Quest";
+            treeNode130.Name = "Node20";
+            treeNode130.Text = "Weapons";
+            treeNode131.Name = "Node21";
+            treeNode131.Text = "Armor";
+            treeNode132.Name = "Node22";
+            treeNode132.Text = "Static";
+            treeNode133.Name = "Node12";
+            treeNode133.Text = "Items";
+            treeNode134.Name = "Node11";
+            treeNode134.Text = "Objects-Game";
+            treeNode135.Name = "Node41";
+            treeNode135.Text = "Maps";
+            treeNode136.Name = "Node23";
+            treeNode136.Text = "Objects-World";
+            treeNode137.Name = "Node35";
+            treeNode137.Text = "Quests";
+            treeNode138.Name = "Node24";
+            treeNode138.Text = "Quests";
+            treeNode139.Name = "Node31";
+            treeNode139.Text = "StringGlobals";
+            treeNode140.Name = "Node32";
+            treeNode140.Text = "Int Globals";
+            treeNode141.Name = "Node33";
+            treeNode141.Text = "Bool globals";
+            treeNode142.Name = "Node34";
+            treeNode142.Text = "Byte Globals";
+            treeNode143.Name = "Node25";
+            treeNode143.Text = "Data";
+            treeNode144.Name = "Node30";
+            treeNode144.Text = "Settings";
+            treeNode145.Name = "Node40";
+            treeNode145.Text = "Elements";
+            treeNode146.Name = "Node39";
+            treeNode146.Text = "TileMaps";
+            treeNode147.Name = "Node38";
+            treeNode147.Text = "Skin Types";
+            treeNode148.Name = "Node37";
+            treeNode148.Text = "Body Types";
+            treeNode149.Name = "Node36";
+            treeNode149.Text = "Icons";
+            treeNode150.Name = "Node26";
+            treeNode150.Text = "Engine";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode127,
+            treeNode134,
+            treeNode136,
+            treeNode138,
+            treeNode143,
+            treeNode150});
+            this.treeView1.Size = new System.Drawing.Size(194, 551);
+            this.treeView1.TabIndex = 0;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(851, 551);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            // 
+            // RaceMen
+            // 
+            this.RaceMen.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.newToolStripMenuItem1});
+            this.RaceMen.Name = "RaceMen";
+            this.RaceMen.Size = new System.Drawing.Size(99, 48);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // newToolStripMenuItem1
+            // 
+            this.newToolStripMenuItem1.Name = "newToolStripMenuItem1";
+            this.newToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem1.Text = "New";
+            this.newToolStripMenuItem1.Click += new System.EventHandler(this.newToolStripMenuItem1_Click);
+            // 
             // EditMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,6 +805,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.RaceMen.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -835,6 +875,10 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.ContextMenuStrip RaceMen;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem1;
     }
 }
 
