@@ -20,6 +20,7 @@ using Editor.Trans;
 using LibRealm.Base;
 using LibRealm.Characters;
 using ROTM_MU002.Windows;
+using Editor;
 namespace Editor.EditorF
 {
     public enum Editing
@@ -90,7 +91,25 @@ namespace Editor.EditorF
                 }
             }
             else
-            { MessageBox.Show("Races File does not exits, or you have an error, please check file location, or reinstall Game"); }
+            { MessageBox.Show("Races File does not exits, or you have an error, please check file location, or reinstall Game");
+            }
+            try
+            {
+                using (BinaryReader re = new BinaryReader(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\Elems.elm"), FileMode.Open)))
+                {
+                    Elements x = new Elements();
+                    int p = re.ReadInt32();
+                    this.toolStripProgressBar1.Maximum += p;
+                    this.toolStripStatusLabel2.Text = "Elements";
+                    for (int i = 0; i < p; i++)
+                    {
+                        x.read(re);
+                        this.elems.Add(x.ID, x);
+                        this.backgroundWorker1.ReportProgress(this.toolStripProgressBar1.Value + 1);
+                    }
+                }
+            }
+            catch { }
         }
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         { this.toolStripProgressBar1.Value = e.ProgressPercentage; }
@@ -104,14 +123,22 @@ namespace Editor.EditorF
         { this.backgroundWorker2.RunWorkerAsync(); }
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (!Directory.Exists(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\")))
-            { Directory.CreateDirectory(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\")); }
+            diCheck(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\"));
             BinaryWriter wr = new BinaryWriter(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\Races.ra"), FileMode.Create));
             wr.Write(this.races.Keys.Count);
             foreach (int x in this.races.Keys)
             {
                 Race wriRace = this.races[x];
                 wriRace.Write(wr);
+            }
+            wr.Close();
+            diCheck(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\"));
+            wr = new BinaryWriter(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\Elems.elm"), FileMode.Open));
+            wr.Write(this.elems.Keys.Count);
+            foreach (int x in this.races.Keys)
+            {
+                Elements wriRace = this.elems[x];
+                wriRace.write(wr);
             }
             wr.Close();
         }
@@ -323,6 +350,13 @@ namespace Editor.EditorF
                     }
                 }
             }
+            foreach (ToolStripItem x in this.statusStrip.Items)
+            {
+                try
+                { x.Text = this.trns.tr(x.Text); }
+                catch
+                { x.Text = x.Text; }
+            }
             #endregion
         }
         public string TransWord(string word)
@@ -332,12 +366,17 @@ namespace Editor.EditorF
             catch
             { return word; }
         }
+        public void diCheck(string s)
+        {
+            if (!Directory.Exists(s))
+            { Directory.CreateDirectory(s); }
+        }
         #endregion
         #region unfinished
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        { }
+        { ElemEdit xp = new ElemEdit(this); xp.Show(); }
         private void editToolStripMenuItem1_Click(object sender, EventArgs e)
-        { }
+        { ElemEdit xp = new ElemEdit(this,elems[getid()]); xp.Show(); }
         #endregion
         private void editTranslationToolStripMenuItem_Click(object sender, EventArgs e)
         {

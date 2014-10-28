@@ -8,3 +8,4 @@ C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\Editor.
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\Editor.exe
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\Editor.Trans.TransCreator.resources
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\Editor.Options.OptMenu.resources
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\Editor.ElemEdit.resources

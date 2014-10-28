@@ -88,6 +88,12 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElemEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElemEdit.Designer.cs">
+      <DependentUpon>ElemEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="GraphicsDeviceControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -144,6 +150,9 @@
   <ItemGroup>
     <EmbeddedResource Include="EditorF\EditMain.resx">
       <DependentUpon>EditMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElemEdit.resx">
+      <DependentUpon>ElemEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Options\OptMenu.resx">
       <DependentUpon>OptMenu.cs</DependentUpon>

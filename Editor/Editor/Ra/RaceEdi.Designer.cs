@@ -294,6 +294,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RaceEdi";
             this.Text = "Race Editor";
+            this.Load += new System.EventHandler(this.RaceEdi_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

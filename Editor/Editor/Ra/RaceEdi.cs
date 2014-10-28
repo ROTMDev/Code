@@ -69,5 +69,23 @@ namespace Editor.Ra
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         { this.Close(); }
+
+        private void RaceEdi_Load(object sender, EventArgs e)
+        {
+            foreach (Control x in this.Controls)
+            {
+                x.Text = editor.TransWord(x.Text);
+                foreach (Control x2 in x.Controls)
+                {
+                    x2.Text = editor.TransWord(x2.Text);
+                }
+            }
+            foreach (ToolStripMenuItem x in this.menuStrip1.Items)
+            {
+                 x.Text = editor.TransWord(x.Text); 
+            }
+            this.Text = editor.TransWord(this.Text);
+        
+        }
     }
 }
