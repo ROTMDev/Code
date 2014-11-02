@@ -21,3 +21,8 @@ C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.Trans.TransCreator.resources
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.ElemEdit.resources
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Debug\Editor.Options.OptMenu.resources
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Data\flat.xnb
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Editor.exe.config
+C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\bin\x86\Debug\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll

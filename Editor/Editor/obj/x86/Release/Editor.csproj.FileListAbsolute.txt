@@ -9,3 +9,5 @@ C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\Editor.
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\Editor.Trans.TransCreator.resources
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\Editor.Options.OptMenu.resources
 C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\Editor.ElemEdit.resources
+C:\Users\MutationInc\Documents\GitHub\BuiltEditor\Data\flat.xnb
+C:\Users\MutationInc\Documents\GitHub\BuiltEditor\Editor.exe.config

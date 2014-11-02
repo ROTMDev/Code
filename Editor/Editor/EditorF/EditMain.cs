@@ -3,7 +3,7 @@
 // =Programmers=
 // =Mute Lovestone=
 // =EditMain.cs=
-// = 10/26/2014 =
+// = 10/29/2014 =
 // =Editor=
 using System;
 using System.Collections.Generic;
@@ -14,13 +14,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Editor;
 using Editor.Options;
 using Editor.Ra;
 using Editor.Trans;
+using LibRealm;
 using LibRealm.Base;
 using LibRealm.Characters;
 using ROTM_MU002.Windows;
-using Editor;
+using ROTM_MU002.Windows.Builder;
 namespace Editor.EditorF
 {
     public enum Editing
@@ -35,6 +37,7 @@ namespace Editor.EditorF
         public Dictionary<int, Race> races = new Dictionary<int, Race>();
         public Dictionary<int, Elements> elems = new Dictionary<int, Elements>();
         public LanTrans trns = new LanTrans();
+        public DataManager Man = new DataManager();
         #endregion
         #region premade(Need Edited)
         private int childFormNumber = 0;
@@ -73,10 +76,10 @@ namespace Editor.EditorF
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (Directory.Exists(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\")))
+            try
             {
                 Race x = new Race();
-                using (BinaryReader re = new BinaryReader(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\Races.ra"), FileMode.Open)))
+                using (BinaryReader re = new BinaryReader(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\Race.ra"), FileMode.Open)))
                 {
                     int p = re.ReadInt32();
                     this.toolStripProgressBar1.Maximum = p;
@@ -90,26 +93,27 @@ namespace Editor.EditorF
                     }
                 }
             }
-            else
-            { MessageBox.Show("Races File does not exits, or you have an error, please check file location, or reinstall Game");
-            }
+            catch
+            { }
+            
             try
             {
                 using (BinaryReader re = new BinaryReader(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\Elems.elm"), FileMode.Open)))
                 {
-                    Elements x = new Elements();
+                    Elements x2 = new Elements();
                     int p = re.ReadInt32();
                     this.toolStripProgressBar1.Maximum += p;
                     this.toolStripStatusLabel2.Text = "Elements";
                     for (int i = 0; i < p; i++)
                     {
-                        x.read(re);
-                        this.elems.Add(x.ID, x);
+                        x2.read(re);
+                        this.elems.Add(x2.ID, x2);
                         this.backgroundWorker1.ReportProgress(this.toolStripProgressBar1.Value + 1);
                     }
                 }
             }
-            catch { }
+            catch
+            { }
         }
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         { this.toolStripProgressBar1.Value = e.ProgressPercentage; }
@@ -123,24 +127,32 @@ namespace Editor.EditorF
         { this.backgroundWorker2.RunWorkerAsync(); }
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            diCheck(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\"));
-            BinaryWriter wr = new BinaryWriter(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\Races.ra"), FileMode.Create));
-            wr.Write(this.races.Keys.Count);
-            foreach (int x in this.races.Keys)
+            this.diCheck(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\"));
+            using (BinaryWriter wr = new BinaryWriter(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\Race.ra"), FileMode.Create)))
             {
-                Race wriRace = this.races[x];
-                wriRace.Write(wr);
+                this.toolStripProgressBar1.Maximum = this.races.Keys.Count;
+                this.toolStripStatusLabel4.Text = "Races";
+                wr.Write(this.races.Keys.Count);
+                foreach (int x in this.races.Keys)
+                {
+                    Race wriRace = this.races[x];
+                    wriRace.Write(wr);
+                    this.backgroundWorker2.ReportProgress(x + 1);
+                }
             }
-            wr.Close();
-            diCheck(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\"));
-            wr = new BinaryWriter(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\Elems.elm"), FileMode.Open));
-            wr.Write(this.elems.Keys.Count);
-            foreach (int x in this.races.Keys)
+            this.diCheck(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\"));
+            using (BinaryWriter wr = new BinaryWriter(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\Elems.elm"), FileMode.Create)))
             {
-                Elements wriRace = this.elems[x];
-                wriRace.write(wr);
+                this.toolStripProgressBar1.Maximum += this.elems.Keys.Count;
+                this.toolStripStatusLabel4.Text = "Elements";
+                wr.Write(this.elems.Keys.Count);
+                foreach (int x in this.elems.Keys)
+                {
+                    Elements wriRace = this.elems[x];
+                    wriRace.write(wr);
+                    this.backgroundWorker2.ReportProgress(this.toolStripProgressBar1.Value + 1);
+                }
             }
-            wr.Close();
         }
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -197,6 +209,7 @@ namespace Editor.EditorF
                 head = new ColumnHeader();
                 head.Text = this.TransWord("ID");
                 this.listView1.Columns.Add(head);
+                this.listView1.ContextMenuStrip = this.ElemCon;
                 this.AddElems();
             }
             #endregion
@@ -218,8 +231,19 @@ namespace Editor.EditorF
         private void EditMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.edits == Editing.True)
-            { this.backgroundWorker1.RunWorkerAsync(); }
+            { this.backgroundWorker2.RunWorkerAsync(); }
         }
+        private void editTranslationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransCreator creator = new TransCreator();
+            creator.Show(this);
+        }
+        private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
+        { }
+        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        { this.toolStripStatusLabel2.Text = "Complete"; }
+        private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        { this.toolStripProgressBar1.Value = e.ProgressPercentage; }
         #endregion
         #region custom logic
         public void addRaces()
@@ -277,7 +301,7 @@ namespace Editor.EditorF
                 wr.Close();
             }
             catch
-            { MessageBox.Show("Please Select your Language,go Options>Options then choose your language and save"); }
+            { MessageBox.Show("Please Select your Language,go Tools>Options then choose your language and save"); }
             this.translate();
         }
         public void translate()
@@ -374,14 +398,37 @@ namespace Editor.EditorF
         #endregion
         #region unfinished
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        { ElemEdit xp = new ElemEdit(this); xp.Show(); }
-        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
-        { ElemEdit xp = new ElemEdit(this,elems[getid()]); xp.Show(); }
-        #endregion
-        private void editTranslationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TransCreator creator = new TransCreator();
-            creator.Show(this);
+            ElemEdit xp = new ElemEdit(this); xp.Show();
+        }
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ElemEdit xp = new ElemEdit(this,this.elems[this.getid()]); xp.Show();
+        }
+        #endregion
+
+        private void convertModelsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            string[] modelfiles = Directory.GetFiles(Environment.CurrentDirectory + @"\Data\Models\UnCon\", "*.fbx");
+            string outpu = Environment.CurrentDirectory + @"\Data\Models\Useable\";
+            ContentBuilder tem = new ContentBuilder(outpu);
+            tem.Clear();
+            
+            foreach (string modfile in modelfiles)
+            {
+                
+                tem.Add(modfile);
+            }
+            try
+            {
+                tem.Build();
+            }
+            catch (Exception x)
+            {
+
+                MessageBox.Show(x.ToString());
+            }
         }
     }
 }

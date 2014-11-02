@@ -1,0 +1,6 @@
+C:\Users\MutationInc\Documents\GitHub\Code\MULib2\bin\x86\Release\MULib2.dll
+C:\Users\MutationInc\Documents\GitHub\Code\MULib2\bin\x86\Release\MULib2.pdb
+C:\Users\MutationInc\Documents\GitHub\Code\MULib2\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\MutationInc\Documents\GitHub\Code\MULib2\obj\x86\Release\MULib2.dll
+C:\Users\MutationInc\Documents\GitHub\Code\MULib2\obj\x86\Release\MULib2.pdb
+C:\Users\MutationInc\Documents\GitHub\Code\MULib2\obj\x86\Release\MULib2.csprojResolveAssemblyReference.cache

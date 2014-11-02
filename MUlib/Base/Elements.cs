@@ -44,11 +44,13 @@ namespace LibRealm.Base
         #region read/write
         public void write(BinaryWriter wr)
         {
-            wr.Write(this.name); wr.Write(this.iD);
+            wr.Write(this.name);
+            wr.Write(this.iD);
         }
         public void read(BinaryReader re)
         {
-            this.name = re.ReadString(); this.iD = re.ReadInt32();
+            this.name = re.ReadString();
+            this.iD = re.ReadInt32();
         }
         #endregion
     }

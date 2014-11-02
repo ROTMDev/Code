@@ -1,0 +1,9 @@
+-------------------------------
+Please untill i build in the bug reporter please type up detailed bug report
+include the following
+Your name-
+Date-
+Version-
+Operating system-
+Details of how you found bug-
+-------------------------------------------------------------------------

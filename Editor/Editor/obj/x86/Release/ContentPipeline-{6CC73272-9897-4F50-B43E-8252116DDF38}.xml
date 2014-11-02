@@ -10,6 +10,26 @@
       <Output>C:\Users\MutationInc\Documents\GitHub\BuiltEditor\Data\Menu.xnb</Output>
       <Time>2014-10-25T17:30:32.0469425-06:00</Time>
     </Item>
+    <Item>
+      <Source>flat.fbx</Source>
+      <Name>flat</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\MutationInc\Documents\GitHub\BuiltEditor\Data\flat.xnb</Output>
+      <Time>2014-11-02T01:03:13.0031816-06:00</Time>
+      <Dependency>
+        <Key>C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\flat_0.xml</Key>
+        <Value>2014-11-02T02:09:27.9884459-07:00</Value>
+      </Dependency>
+    </Item>
+    <Item>
+      <Source>flat.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>C:\Users\MutationInc\Documents\GitHub\Code\Editor\Editor\obj\x86\Release\flat_0.xml</Output>
+      <Time>2014-11-02T01:03:13.0031816-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{6CC73272-9897-4F50-B43E-8252116DDF38}</ContentProjectGUID>
