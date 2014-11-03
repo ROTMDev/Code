@@ -17,6 +17,7 @@ namespace LibRealm.Characters
         private string name;
         private Int32 raceID;
         private string bodyPath;
+        private string modelPath;
         #endregion
         #region Gets/sets
         public string BodyPath
@@ -43,12 +44,13 @@ namespace LibRealm.Characters
         #region logic
         #endregion
         #region class
-        public Race(Stats Base, string NaMe, Int32 ID, string body)
+        public Race(Stats Base, string NaMe, Int32 ID, string body,string model)
         {
             this.baseStats = Base;
             this.name = NaMe;
             this.raceID = ID;
             this.bodyPath = body;
+            this.modelPath = model;
         }
         public Race()
         { }
@@ -58,6 +60,7 @@ namespace LibRealm.Characters
         {
             wr.Write(this.name);
             wr.Write(this.bodyPath);
+            wr.Write(this.modelPath);
             wr.Write(this.raceID);
             this.baseStats.Write(wr);
         }
@@ -65,6 +68,7 @@ namespace LibRealm.Characters
         {
             this.name = re.ReadString();
             this.bodyPath = re.ReadString();
+            this.modelPath = re.ReadString();
             this.raceID = re.ReadInt32();
             this.baseStats.read(re);
         }

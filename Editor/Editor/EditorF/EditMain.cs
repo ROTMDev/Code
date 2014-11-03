@@ -13,6 +13,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Editor;
 using Editor.Options;
@@ -30,6 +31,12 @@ namespace Editor.EditorF
         True,
         False
     }
+    public enum Current
+    {
+        Completed,
+        Races,
+        Elements
+    }
     public partial class EditMain : Form
     {
         #region values
@@ -38,6 +45,10 @@ namespace Editor.EditorF
         public Dictionary<int, Elements> elems = new Dictionary<int, Elements>();
         public LanTrans trns = new LanTrans();
         public DataManager Man = new DataManager();
+        int totals = 0;
+        int progress = 0;
+        public Current LoadCur;
+        public Current SaveCur;
         #endregion
         #region premade(Need Edited)
         private int childFormNumber = 0;
@@ -76,52 +87,60 @@ namespace Editor.EditorF
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            ToolStrip.CheckForIllegalCrossThreadCalls = false;
+            this.LoadCur = Current.Races;
             try
             {
                 Race x = new Race();
                 using (BinaryReader re = new BinaryReader(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\Race.ra"), FileMode.Open)))
                 {
                     int p = re.ReadInt32();
-                    this.toolStripProgressBar1.Maximum = p;
-                    this.toolStripStatusLabel2.Text = "Races";
+                    this.totals = p;
+                    
                     ListView.CheckForIllegalCrossThreadCalls = false;
                     for (int i = 0; i < p; i++)
                     {
+                        x = new Race();
                         x.Read(re);
+                        Thread.Sleep(100);
                         this.races.Add(x.RaceID, x);
-                        this.backgroundWorker1.ReportProgress(i + 1);
+                        this.progress = i + 1;
+                        this.backgroundWorker1.ReportProgress(this.progress);
                     }
                 }
             }
             catch
             { }
-            
+            this.LoadCur = Current.Elements;
             try
             {
                 using (BinaryReader re = new BinaryReader(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\Elems.elm"), FileMode.Open)))
                 {
-                    
                     Elements x2 = new Elements();
                     int p = re.ReadInt32();
-                    this.toolStripProgressBar1.Maximum = this.toolStripProgressBar1.Maximum +p;
-                    this.toolStripStatusLabel2.Text = "Elements";
+                    this.totals += p;
                     for (int i = 0; i < p; i++)
                     {
+                        x2 = new Elements();
                         x2.read(re);
+                        Thread.Sleep(100);
                         this.elems.Add(x2.ID, x2);
-                        int xh = this.toolStripProgressBar1.Value + 1;
-                        this.backgroundWorker1.ReportProgress(xh);
+                        this.progress += 1;
+                        this.backgroundWorker1.ReportProgress(this.progress);
                     }
                 }
             }
             catch
             { }
+            this.LoadCur = Current.Completed;
         }
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        { this.toolStripProgressBar1.Value = e.ProgressPercentage; MessageBox.Show(e.ProgressPercentage.ToString()+toolStripProgressBar1.Value.ToString()); }
+        {
+            this.toolStripStatusLabel2.Text = this.LoadCur.ToString(); 
+            this.toolStripProgressBar1.Maximum = this.totals; 
+            this.toolStripProgressBar1.Value = e.ProgressPercentage;
+        }
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        { this.toolStripStatusLabel2.Text = "Complete"; }
+        { this.toolStripStatusLabel2.Text = this.LoadCur.ToString(); }
         private void treeView1_DoubleClick(object sender, EventArgs e)
         { }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,32 +149,37 @@ namespace Editor.EditorF
         { this.backgroundWorker2.RunWorkerAsync(); }
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
+            this.SaveCur = Current.Races;
             this.diCheck(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\"));
             using (BinaryWriter wr = new BinaryWriter(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Races\Race.ra"), FileMode.Create)))
             {
-                this.toolStripProgressBar1.Maximum = this.races.Keys.Count;
-                this.toolStripStatusLabel4.Text = "Races";
+                this.totals = this.races.Keys.Count;
                 wr.Write(this.races.Keys.Count);
                 foreach (int x in this.races.Keys)
                 {
                     Race wriRace = this.races[x];
                     wriRace.Write(wr);
-                    this.backgroundWorker2.ReportProgress(x + 1);
+                    Thread.Sleep(100);
+                    this.progress = x;
+                    this.backgroundWorker2.ReportProgress(this.progress);
                 }
             }
+            this.SaveCur = Current.Elements;
             this.diCheck(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\"));
             using (BinaryWriter wr = new BinaryWriter(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\Elems.elm"), FileMode.Create)))
             {
-                this.toolStripProgressBar1.Maximum += this.elems.Keys.Count;
-                this.toolStripStatusLabel4.Text = "Elements";
+                this.totals = this.totals + this.elems.Keys.Count;
                 wr.Write(this.elems.Keys.Count);
                 foreach (int x in this.elems.Keys)
                 {
                     Elements wriRace = this.elems[x];
                     wriRace.write(wr);
-                    this.backgroundWorker2.ReportProgress(this.toolStripProgressBar1.Value + 1);
+                    Thread.Sleep(100);
+                    this.progress = this.progress + 1;
+                    this.backgroundWorker2.ReportProgress(this.progress);
                 }
             }
+            this.SaveCur = Current.Completed;
         }
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -244,9 +268,40 @@ namespace Editor.EditorF
         private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
         { }
         private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        { this.toolStripStatusLabel2.Text = "Complete"; }
+        { this.toolStripStatusLabel4.Text = this.SaveCur.ToString(); }
         private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        { this.toolStripProgressBar1.Value = e.ProgressPercentage; }
+        {
+            this.toolStripStatusLabel4.Text = this.SaveCur.ToString();
+            this.toolStripProgressBar1.Maximum = this.totals; 
+            this.toolStripProgressBar1.Value = e.ProgressPercentage;
+        }
+        private void convertModelsToolStripMenuItem_Click(object sender, EventArgs e)
+        { this.backgroundWorker4.RunWorkerAsync(); }
+        private void backgroundWorker4_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string[] modelfiles = Directory.GetFiles(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\UnCon\"), "*.fbx");
+            string outpu = string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\Useable\");
+            ContentBuilder tem = new ContentBuilder(outpu);
+            tem.Clear();
+            foreach (string modfile in modelfiles)
+            { tem.Add(modfile); }
+            try
+            { tem.Build(); }
+            catch (Exception x)
+            { MessageBox.Show(x.ToString()); }
+            File.Delete(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\Useable\cachefile--targetpath.txt"));
+            Directory.Delete(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\Useable\obj\"), true);
+            this.convertModelsToolStripMenuItem.Visible = false;
+            MessageBox.Show("Finished Converting Model Files");
+        }
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ElemEdit xp = new ElemEdit(this); xp.Show();
+        }
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ElemEdit xp = new ElemEdit(this, this.elems[this.getid()]); xp.Show();
+        }
         #endregion
         #region custom logic
         public void addRaces()
@@ -400,33 +455,8 @@ namespace Editor.EditorF
         }
         #endregion
         #region unfinished
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ElemEdit xp = new ElemEdit(this); xp.Show();
-        }
-        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            ElemEdit xp = new ElemEdit(this,this.elems[this.getid()]); xp.Show();
-        }
+        
         #endregion
-        private void convertModelsToolStripMenuItem_Click(object sender, EventArgs e)
-        { this.backgroundWorker4.RunWorkerAsync(); }
-        private void backgroundWorker4_DoWork(object sender, DoWorkEventArgs e)
-        {
-            string[] modelfiles = Directory.GetFiles(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\UnCon\"), "*.fbx");
-            string outpu = string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\Useable\");
-            ContentBuilder tem = new ContentBuilder(outpu);
-            tem.Clear();
-            foreach (string modfile in modelfiles)
-            { tem.Add(modfile); }
-            try
-            { tem.Build(); }
-            catch (Exception x)
-            { MessageBox.Show(x.ToString()); }
-            File.Delete(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\Useable\cachefile--targetpath.txt"));
-            Directory.Delete(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\Useable\obj\"), true);
-            this.convertModelsToolStripMenuItem.Visible = false;
-            MessageBox.Show("Finished Converting Model Files");
-        }
+        
     }
 }

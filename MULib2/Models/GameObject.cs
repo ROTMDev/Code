@@ -2,7 +2,7 @@
 // =Realms Of the Mind=
 // =Programmers=
 // =Mute Lovestone=
-// =Class1.cs=
+// =GameObject.cs=
 // = 11/3/2014 =
 // =MULib2=
 using System;
