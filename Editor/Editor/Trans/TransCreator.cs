@@ -3,7 +3,7 @@
 // =Programmers=
 // =Mute Lovestone=
 // =TransCreator.cs=
-// = 10/26/2014 =
+// = 11/3/2014 =
 // =Editor=
 using System;
 using System.Collections.Generic;
@@ -63,27 +63,20 @@ namespace Editor.Trans
             catch
             { }
             this.tanslations.Add(this.comboBox2.Items[this.comboBox2.SelectedIndex].ToString(), this.translation);
-            richTextBox2.Text = "";
+            this.richTextBox2.Text = "";
             List<string> xp = new List<string>();
             foreach (string x in this.translation.Langagetrans.Keys)
-            {
-                
-                xp.Add(string.Format("{0}<to>{1}",x,translation.Langagetrans[x]));
-                
-            }
-            richTextBox2.Lines = xp.ToArray();
+            { xp.Add(string.Format("{0}<to>{1}", x, this.translation.Langagetrans[x])); }
+            this.richTextBox2.Lines = xp.ToArray();
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        { this.textBox2.Text = this.comboBox1.Items[this.comboBox1.SelectedIndex].ToString();
-        richTextBox2.Text = "";
-        List<string> xp = new List<string>();
-        foreach (string x in this.translation.Langagetrans.Keys)
         {
-
-            xp.Add(string.Format("{0}<to>{1}", x, translation.Langagetrans[x]));
-
-        }
-        richTextBox2.Lines = xp.ToArray();
+            this.textBox2.Text = this.comboBox1.Items[this.comboBox1.SelectedIndex].ToString();
+            this.richTextBox2.Text = "";
+            List<string> xp = new List<string>();
+            foreach (string x in this.translation.Langagetrans.Keys)
+            { xp.Add(string.Format("{0}<to>{1}", x, this.translation.Langagetrans[x])); }
+            this.richTextBox2.Lines = xp.ToArray();
         }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -3,7 +3,7 @@
 // =Programmers=
 // =Mute Lovestone=
 // =EditMain.cs=
-// = 10/29/2014 =
+// = 11/3/2014 =
 // =Editor=
 using System;
 using System.Collections.Generic;
@@ -76,6 +76,7 @@ namespace Editor.EditorF
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+            ToolStrip.CheckForIllegalCrossThreadCalls = false;
             try
             {
                 Race x = new Race();
@@ -100,15 +101,17 @@ namespace Editor.EditorF
             {
                 using (BinaryReader re = new BinaryReader(File.Open(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Elems\Elems.elm"), FileMode.Open)))
                 {
+                    
                     Elements x2 = new Elements();
                     int p = re.ReadInt32();
-                    this.toolStripProgressBar1.Maximum += p;
+                    this.toolStripProgressBar1.Maximum = this.toolStripProgressBar1.Maximum +p;
                     this.toolStripStatusLabel2.Text = "Elements";
                     for (int i = 0; i < p; i++)
                     {
                         x2.read(re);
                         this.elems.Add(x2.ID, x2);
-                        this.backgroundWorker1.ReportProgress(this.toolStripProgressBar1.Value + 1);
+                        int xh = this.toolStripProgressBar1.Value + 1;
+                        this.backgroundWorker1.ReportProgress(xh);
                     }
                 }
             }
@@ -116,7 +119,7 @@ namespace Editor.EditorF
             { }
         }
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        { this.toolStripProgressBar1.Value = e.ProgressPercentage; }
+        { this.toolStripProgressBar1.Value = e.ProgressPercentage; MessageBox.Show(e.ProgressPercentage.ToString()+toolStripProgressBar1.Value.ToString()); }
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         { this.toolStripStatusLabel2.Text = "Complete"; }
         private void treeView1_DoubleClick(object sender, EventArgs e)
@@ -406,29 +409,24 @@ namespace Editor.EditorF
             ElemEdit xp = new ElemEdit(this,this.elems[this.getid()]); xp.Show();
         }
         #endregion
-
         private void convertModelsToolStripMenuItem_Click(object sender, EventArgs e)
+        { this.backgroundWorker4.RunWorkerAsync(); }
+        private void backgroundWorker4_DoWork(object sender, DoWorkEventArgs e)
         {
-            
-            string[] modelfiles = Directory.GetFiles(Environment.CurrentDirectory + @"\Data\Models\UnCon\", "*.fbx");
-            string outpu = Environment.CurrentDirectory + @"\Data\Models\Useable\";
+            string[] modelfiles = Directory.GetFiles(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\UnCon\"), "*.fbx");
+            string outpu = string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\Useable\");
             ContentBuilder tem = new ContentBuilder(outpu);
             tem.Clear();
-            
             foreach (string modfile in modelfiles)
-            {
-                
-                tem.Add(modfile);
-            }
+            { tem.Add(modfile); }
             try
-            {
-                tem.Build();
-            }
+            { tem.Build(); }
             catch (Exception x)
-            {
-
-                MessageBox.Show(x.ToString());
-            }
+            { MessageBox.Show(x.ToString()); }
+            File.Delete(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\Useable\cachefile--targetpath.txt"));
+            Directory.Delete(string.Format("{0}{1}", Environment.CurrentDirectory, @"\Data\Models\Useable\obj\"), true);
+            this.convertModelsToolStripMenuItem.Visible = false;
+            MessageBox.Show("Finished Converting Model Files");
         }
     }
 }

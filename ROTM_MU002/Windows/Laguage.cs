@@ -3,7 +3,7 @@
 // =Programmers=
 // =Mute Lovestone=
 // =Laguage.cs=
-// = 10/26/2014 =
+// = 11/3/2014 =
 // =ROTM_MU002=
 using System;
 using System.Collections.Generic;
@@ -50,7 +50,12 @@ namespace ROTM_MU002.Windows
         public LanTrans()
         { }
         public void addTrans(string english, string trans)
-        { try { this.Langagetrans.Remove(english); } catch { } this.Langagetrans.Add(english, trans); }
+        {
+            try
+            { this.Langagetrans.Remove(english); }
+            catch
+            { }this.Langagetrans.Add(english, trans);
+        }
         public string tr(string x)
         { return this.Langagetrans[x]; }
         #endregion

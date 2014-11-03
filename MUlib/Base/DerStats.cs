@@ -3,7 +3,7 @@
 // =Programmers=
 // =Mute Lovestone=
 // =DerStats.cs=
-// = 10/26/2014 =
+// = 11/3/2014 =
 // =MUlib=
 using System;
 namespace LibRealm.Base

@@ -3,7 +3,7 @@
 // =Programmers=
 // =Mute Lovestone=
 // =AttributePair.cs=
-// = 10/26/2014 =
+// = 11/3/2014 =
 // =MUlib=
 namespace LibRealm.Base
 {

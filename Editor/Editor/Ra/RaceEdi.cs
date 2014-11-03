@@ -3,7 +3,7 @@
 // =Programmers=
 // =Mute Lovestone=
 // =RaceEdi.cs=
-// = 10/26/2014 =
+// = 11/3/2014 =
 // =Editor=
 using System;
 using System.Collections.Generic;
@@ -69,23 +69,17 @@ namespace Editor.Ra
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         { this.Close(); }
-
         private void RaceEdi_Load(object sender, EventArgs e)
         {
             foreach (Control x in this.Controls)
             {
-                x.Text = editor.TransWord(x.Text);
+                x.Text = this.editor.TransWord(x.Text);
                 foreach (Control x2 in x.Controls)
-                {
-                    x2.Text = editor.TransWord(x2.Text);
-                }
+                { x2.Text = this.editor.TransWord(x2.Text); }
             }
             foreach (ToolStripMenuItem x in this.menuStrip1.Items)
-            {
-                 x.Text = editor.TransWord(x.Text); 
-            }
-            this.Text = editor.TransWord(this.Text);
-        
+            { x.Text = this.editor.TransWord(x.Text); }
+            this.Text = this.editor.TransWord(this.Text);
         }
     }
 }

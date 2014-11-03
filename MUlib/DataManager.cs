@@ -3,15 +3,15 @@
 // =Programmers=
 // =Mute Lovestone=
 // =DataManager.cs=
-// = 10/26/2014 =
+// = 11/3/2014 =
 // =MUlib=
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using LibRealm.Base;
 using LibRealm.Characters;
-using System.IO;
 namespace LibRealm
 {
     public sealed class DataManager
@@ -39,7 +39,6 @@ namespace LibRealm
         { }
         #endregion
         #region read write
-        
         #endregion
     }
 }
